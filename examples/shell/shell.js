@@ -1,6 +1,10 @@
-import { PWF_VERSION, applyPreferences, initPwf, openDialog } from '../../dist/pwf.js';
+import { PWF_VERSION, applyPreferences, initLaunchers, initPwf, openDialog } from '../../dist/pwf.js';
 
 initPwf();
+
+let launcherStorage = null;
+try { launcherStorage = window.localStorage; } catch { /* The launcher also works in memory. */ }
+initLaunchers(document, { storage: launcherStorage, storageKey: 'pwf-showcase-pins' });
 
 document.querySelectorAll('[data-pwf-version]').forEach((output) => {
   output.textContent = PWF_VERSION;

@@ -21,7 +21,9 @@ The repository is at an early foundation stage. The first slice provides:
 - a dependency-free safe Markdown viewer that keeps documentation subpages in
   the complete application design;
 - a unified PWF Showcase with live component previews, code recipes, themed
-  horizontal scroll rails, immediate search focus, and normal/wide/fluid views.
+  horizontal scroll rails, immediate search focus, and normal/wide/fluid views;
+- status variants, cards, native dropdowns and accordions, list groups,
+  pagination, input groups, switches, and functional persistent launcher pins.
 
 ## Quick start
 

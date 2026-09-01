@@ -16,8 +16,15 @@ test('foundation build is complete and application-neutral', async () => {
   assert.match(css, /\.pwf-markdown/);
   assert.match(css, /\.pwf-settings-layout/);
   assert.match(css, /\.pwf-scroll-rail__thumb/);
+  assert.match(css, /\.pwf-alert--danger/);
+  assert.match(css, /\.pwf-card--interactive/);
+  assert.match(css, /\.pwf-accordion__item/);
+  assert.match(css, /\.pwf-list-group__item/);
+  assert.match(css, /\.pwf-pagination/);
+  assert.match(css, /\.pwf-switch/);
   assert.match(javascript, /export function initPwf/);
   assert.match(javascript, /export \{ initScrollRails \}/);
+  assert.match(javascript, /export \{ initLaunchers \}/);
   assert.match(css, new RegExp(`Pangom Web Framework v${packageInfo.version.replaceAll('.', '\\.')}`));
   assert.match(javascript, new RegExp(`PWF_VERSION = '${packageInfo.version.replaceAll('.', '\\.')}'`));
   assert.doesNotMatch(css + javascript, /MONITOR_|ona-/i);
@@ -45,11 +52,30 @@ test('shell reference keeps navigation usable as complete page links', async () 
   assert.match(components, /id="dialogs"/);
   assert.match(components, /id="tabs"/);
   assert.match(components, /id="data"/);
+  assert.match(components, /id="themes"/);
+  assert.match(components, /id="status"/);
+  assert.match(components, /id="cards"/);
+  assert.match(components, /id="disclosure"/);
+  assert.match(components, /id="navigation"/);
   assert.match(components, /data-shell-layout/);
   assert.match(components, /data-pwf-scroll-rail/);
   assert.match(documentPage, /data-pwf-dialog-select/);
   assert.match(documentPage, /doc=scroll-rail/);
+  assert.doesNotMatch(home + settings + documentPage + components, /pwf-app__mobile-chevron|>⌄</);
+  assert.match(home + settings + documentPage + components, /pwf-app__mobile-disclosure/);
   assert.doesNotMatch(home, /href="\.\.\/\.\.\/docs\/.+\.md"/);
+});
+
+test('launcher pins are functional and persistence stays injected', async () => {
+  const launcher = await read('../src/js/launcher.js');
+  const shellExample = await read('../examples/shell/shell.js');
+  assert.match(launcher, /export function initLaunchers/);
+  assert.match(launcher, /aria-pressed/);
+  assert.match(launcher, /pwf:launcher-pins-change/);
+  assert.match(launcher, /getItem/);
+  assert.match(launcher, /setItem/);
+  assert.doesNotMatch(launcher, /localStorage|sessionStorage|document\.cookie/);
+  assert.match(shellExample, /initLaunchers\(document, \{ storage: launcherStorage/);
 });
 
 test('search and custom scroll rail implement the usability contract', async () => {

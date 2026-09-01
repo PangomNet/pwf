@@ -80,7 +80,9 @@ the app launcher. They must not replace addressable navigation destinations.
 
 The mobile page selector uses native `details` and a fixed dropdown. Its flexible
 current-page label truncates before the brand, search, or launcher can be pushed
-out of the header. The chevron rotates only as an additional open-state cue.
+out of the header. A framed plus/minus disclosure replaces the former text
+chevron, so open and closed state remain deliberate at small sizes without
+depending on a font glyph.
 
 ## Overlays
 
@@ -102,6 +104,29 @@ typing. Quick settings contain only frequent theme, scheme, width, scale,
 contrast, or motion controls and end with a link to the complete settings page.
 Applications may choose a normal page route instead of an overlay without
 changing the underlying destination contract.
+
+### Launcher pins
+
+`initLaunchers(root, options)` enhances ordinary `.pwf-launcher-card` links with
+a separate pin button. The button exposes state through `aria-pressed`, gives
+pin and unpin actions distinct accessible labels, reorders pinned destinations
+first, and emits `pwf:launcher-pins-change` with the current ID list.
+
+The module uses memory when no adapter is supplied. Persistence is explicitly
+opt-in:
+
+```js
+import { initLaunchers } from '@pangom/pwf';
+
+initLaunchers(document, {
+  storage: window.localStorage,
+  storageKey: 'my-app-launcher-pins'
+});
+```
+
+Applications that need consent-controlled or account-synchronized favorites may
+inject another object implementing `getItem` and `setItem`. Core never selects a
+persistence policy on import.
 
 Long horizontal section navigation may opt into the documented
 [scroll rail](scroll-rail.md). The themed rail adds mouse dragging, wheel, touch,
@@ -173,8 +198,9 @@ controls and links to this complete page for everything else.
 
 The current shell CSS requires no JavaScript. Header tabs, mobile page selection,
 breadcrumbs, cards, section links, and footer links work through complete page
-loads. The reference uses the existing optional dialog enhancement for search and
-launcher prototypes; those are not yet the final search or launcher modules.
+loads. The reference uses the optional dialog enhancement for search and
+launcher. Pin state is the first launcher service; history, drag-and-drop
+ordering, and route-catalog generation remain later independent enhancements.
 
 If scripts fail, the page content and all addressable routes remain available.
 Applications should provide a normal search page and full page catalog before a

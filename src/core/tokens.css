@@ -37,6 +37,8 @@
   --pwf-color-focus: #006fbb;
   --pwf-color-danger: #c92a2a;
   --pwf-color-success: #087f5b;
+  --pwf-color-warning: #a15c00;
+  --pwf-color-info: #0874a6;
   --pwf-color-backdrop: rgba(13, 22, 31, 0.56);
 
   --pwf-blur-surface: 18px;
@@ -64,6 +66,8 @@
   --pwf-color-focus: #72c3ff;
   --pwf-color-danger: #ff8787;
   --pwf-color-success: #63e6be;
+  --pwf-color-warning: #ffd43b;
+  --pwf-color-info: #74c0fc;
   --pwf-color-backdrop: rgba(0, 0, 0, 0.72);
   --pwf-shadow-sm: 0 0.25rem 0.9rem rgba(0, 0, 0, 0.25);
   --pwf-shadow-md: 0 1rem 3rem rgba(0, 0, 0, 0.42);
@@ -87,6 +91,8 @@
     --pwf-color-focus: #72c3ff;
     --pwf-color-danger: #ff8787;
     --pwf-color-success: #63e6be;
+    --pwf-color-warning: #ffd43b;
+    --pwf-color-info: #74c0fc;
     --pwf-color-backdrop: rgba(0, 0, 0, 0.72);
     --pwf-shadow-sm: 0 0.25rem 0.9rem rgba(0, 0, 0, 0.25);
     --pwf-shadow-md: 0 1rem 3rem rgba(0, 0, 0, 0.42);

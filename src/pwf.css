@@ -12,6 +12,10 @@
 @import "./components/loader.css";
 @import "./components/toast.css";
 @import "./components/scroll-rail.css";
+@import "./components/status.css";
+@import "./components/card.css";
+@import "./components/disclosure.css";
+@import "./components/navigation.css";
 @import "./shell/app-shell.css";
 @import "./shell/content.css";
 @import "./shell/overlays.css";

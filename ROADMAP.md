@@ -28,7 +28,10 @@ and build/test output is reproducible.
 - First safe Markdown content module and documentation route inside the shell.
 - Unified PWF Showcase with live component previews, code recipes, three shell
   widths, immediate search focus, and accessible horizontal scroll rails.
-- App launcher persistence with favorites, history, and accessible drag-and-drop.
+- Expanded component families for status, cards, disclosure, navigation, input
+  groups, switches, validation, and a side-by-side theme gallery.
+- Functional launcher pin/unpin controls with opt-in storage injection.
+- App launcher history and accessible drag-and-drop ordering (pin persistence is available).
 - Local profile/nickname adapter and reserved multi-user slots.
 - Navigation adapter with complete page loads as baseline and optional dynamic
   loading as progressive enhancement.

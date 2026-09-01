@@ -5,7 +5,7 @@
     {
       "id": "button",
       "status": "experimental",
-      "css": ["pwf-button", "pwf-button--secondary", "pwf-button--quiet"],
+      "css": ["pwf-button", "pwf-button--secondary", "pwf-button--quiet", "pwf-button--success", "pwf-button--warning", "pwf-button--danger", "pwf-button-group"],
       "javascript": null,
       "semantics": "Use button for actions and a for navigation.",
       "documentation": "docs/components/foundation.md#button"
@@ -21,7 +21,7 @@
     {
       "id": "form-field",
       "status": "experimental",
-      "css": ["pwf-field", "pwf-label", "pwf-input", "pwf-select", "pwf-textarea", "pwf-choice"],
+      "css": ["pwf-field", "pwf-label", "pwf-input", "pwf-select", "pwf-textarea", "pwf-choice", "pwf-input-group", "pwf-input-group__addon", "pwf-switch"],
       "javascript": null,
       "semantics": "Associate every control with a label and hints or errors through aria-describedby.",
       "documentation": "docs/components/foundation.md#form-field"
@@ -68,6 +68,38 @@
       "semantics": "Messages use polite status announcements; danger messages use alert.",
       "documentation": "docs/components/foundation.md#toast",
       "enhancement": "The API inserts text with textContent and never accepts HTML."
+    },
+    {
+      "id": "status",
+      "status": "experimental",
+      "css": ["pwf-alert", "pwf-alert--info", "pwf-alert--success", "pwf-alert--warning", "pwf-alert--danger", "pwf-badge", "pwf-progress", "pwf-progress__bar"],
+      "javascript": null,
+      "semantics": "Use visible text and an appropriate status or alert role; color and icons only supplement meaning.",
+      "documentation": "docs/components/foundation.md#status-alerts-badges-and-progress"
+    },
+    {
+      "id": "card",
+      "status": "experimental",
+      "css": ["pwf-card", "pwf-card__header", "pwf-card__body", "pwf-card__footer", "pwf-card--interactive", "pwf-card-grid"],
+      "javascript": null,
+      "semantics": "Choose an article or section for content cards and an anchor for a fully navigable card.",
+      "documentation": "docs/components/foundation.md#card"
+    },
+    {
+      "id": "disclosure",
+      "status": "experimental",
+      "css": ["pwf-accordion", "pwf-accordion__item", "pwf-dropdown", "pwf-dropdown__menu"],
+      "javascript": null,
+      "semantics": "Use native details and summary for collapsible content and simple contextual dropdowns.",
+      "documentation": "docs/components/foundation.md#dropdown-and-accordion"
+    },
+    {
+      "id": "navigation-list",
+      "status": "experimental",
+      "css": ["pwf-list-group", "pwf-list-group__item", "pwf-pagination"],
+      "javascript": null,
+      "semantics": "Wrap pagination in a named nav, use list markup, and mark the current destination with aria-current.",
+      "documentation": "docs/components/foundation.md#list-group-and-pagination"
     },
     {
       "id": "app-shell",
@@ -126,6 +158,15 @@
       "semantics": "Keep the underlying region natively scrollable and give the scrollbar thumb an accessible name plus aria-controls.",
       "documentation": "docs/components/scroll-rail.md#scroll-rail",
       "enhancement": "Pointer drag, track clicks, vertical wheel input, resize updates, and horizontal scrollbar keyboard commands enhance the same overflow viewport."
+    },
+    {
+      "id": "app-launcher-pins",
+      "status": "experimental",
+      "css": ["pwf-launcher-item", "pwf-launcher-card", "pwf-launcher-pin"],
+      "javascript": "initLaunchers",
+      "semantics": "Keep every destination as an anchor and expose pin state through a separate button with aria-pressed.",
+      "documentation": "docs/components/shell.md#launcher-pins",
+      "enhancement": "Pinning works in memory by default and persists only when the application injects a Storage-compatible adapter."
     },
     {
       "id": "markdown-viewer",

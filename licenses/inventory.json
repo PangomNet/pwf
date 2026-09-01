@@ -6,7 +6,7 @@
     {
       "name": "Pangom Web Framework foundation",
       "kind": "first-party",
-      "version": "0.1.0-alpha.4",
+      "version": "0.1.0-alpha.5",
       "license": "MIT",
       "distribution": "source-and-build",
       "notice": "LICENSE"

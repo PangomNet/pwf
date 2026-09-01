@@ -19,6 +19,8 @@ site doubles as a reference implementation and a continuous integration target.
 
 - [Foundation components](components/foundation.md) contains semantic HTML
   recipes and behavior notes.
+- [Component coverage](component-coverage.md) records the current showcase
+  surface and the remaining component families without implying fake support.
 - [Application shell](components/shell.md) documents the monitor-inspired but
   product-neutral frame, navigation, content patterns, and settings layout.
 - [Markdown viewer](components/markdown-viewer.md) documents the first content

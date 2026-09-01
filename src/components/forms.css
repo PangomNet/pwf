@@ -52,3 +52,23 @@
 progress {
   accent-color: var(--pwf-color-accent);
 }
+
+.pwf-input-group { display: flex; align-items: stretch; }
+.pwf-input-group > :is(.pwf-input, .pwf-select, .pwf-button, .pwf-input-group__addon) { border-radius: 0; margin-inline-start: -1px; }
+.pwf-input-group > :first-child { border-start-start-radius: var(--pwf-radius-md); border-end-start-radius: var(--pwf-radius-md); margin-inline-start: 0; }
+.pwf-input-group > :last-child { border-start-end-radius: var(--pwf-radius-md); border-end-end-radius: var(--pwf-radius-md); }
+.pwf-input-group__addon { display: inline-flex; align-items: center; border: 1px solid var(--pwf-color-border); padding-inline: 0.8rem; background: var(--pwf-color-surface-muted); color: var(--pwf-color-text-muted); white-space: nowrap; }
+.pwf-input-group .pwf-input { min-width: 0; }
+
+.pwf-switch { display: inline-flex; align-items: center; gap: var(--pwf-space-3); cursor: pointer; }
+.pwf-switch input { position: absolute; opacity: 0; pointer-events: none; }
+.pwf-switch__track { position: relative; width: 2.75rem; height: 1.55rem; flex: 0 0 auto; border: 1px solid var(--pwf-color-border); border-radius: var(--pwf-radius-pill); background: var(--pwf-color-surface-muted); transition: background var(--pwf-duration-normal), border-color var(--pwf-duration-normal); }
+.pwf-switch__track::after { content: ""; position: absolute; inset-block-start: 0.18rem; inset-inline-start: 0.2rem; width: 1.05rem; height: 1.05rem; border-radius: 50%; background: var(--pwf-color-text-muted); transition: translate var(--pwf-duration-normal), background var(--pwf-duration-normal); }
+.pwf-switch input:checked + .pwf-switch__track { border-color: var(--pwf-color-accent); background: var(--pwf-color-accent); }
+.pwf-switch input:checked + .pwf-switch__track::after { translate: 1.15rem 0; background: var(--pwf-color-on-accent); }
+.pwf-switch input:focus-visible + .pwf-switch__track { outline: 0.1875rem solid var(--pwf-color-focus); outline-offset: 0.1875rem; }
+
+.pwf-input[aria-invalid="false"],
+.pwf-select[aria-invalid="false"],
+.pwf-textarea[aria-invalid="false"] { border-color: var(--pwf-color-success); }
+.pwf-valid { color: var(--pwf-color-success); font-size: 0.875rem; }

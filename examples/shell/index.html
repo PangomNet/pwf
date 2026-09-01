@@ -40,7 +40,7 @@
         <details class="pwf-app__mobile-pages">
           <summary>
             <svg class="pwf-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
-            <span class="pwf-app__mobile-current">Start</span><span class="pwf-app__mobile-chevron" aria-hidden="true">⌄</span>
+            <span class="pwf-app__mobile-current">Start</span><span class="pwf-app__mobile-disclosure" aria-hidden="true"></span>
           </summary>
           <nav class="pwf-app__mobile-menu" aria-label="Geöffnete Seiten mobil">
             <a href="./index.html" aria-current="page">Start</a>
@@ -121,7 +121,7 @@
         </section>
 
         <section class="pwf-info-grid" aria-label="Bedienhinweise">
-          <article class="pwf-info-card"><span class="pwf-info-card__icon" aria-hidden="true"><svg class="pwf-icon" viewBox="0 0 24 24"><circle cx="5" cy="5" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="19" cy="5" r="1"/><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></span><div><h3>Seiten anpinnen</h3><p>Im Raster-Menü erscheinen später zuletzt geöffnete und dauerhaft angepinnte Seiten.</p></div></article>
+          <article class="pwf-info-card"><span class="pwf-info-card__icon" aria-hidden="true"><svg class="pwf-icon" viewBox="0 0 24 24"><circle cx="5" cy="5" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="19" cy="5" r="1"/><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></span><div><h3>Seiten anpinnen</h3><p>Im Raster-Menü lassen sich Seiten mit dem Pin-Schalter anheften und wieder lösen. Der Showcase merkt sich die Auswahl lokal.</p></div></article>
           <article class="pwf-info-card"><span class="pwf-info-card__icon" aria-hidden="true"><svg class="pwf-icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="10" cy="18" r="2"/></svg></span><div><h3>Darstellung anpassen</h3><p>Die vollständige Einstellungsseite bündelt Design und Größe der gesamten Oberfläche.</p></div></article>
         </section>
       </div>
@@ -155,10 +155,10 @@
     </div>
   </dialog>
 
-  <dialog class="pwf-overlay" id="shell-launcher" data-pwf-overlay-placement="top-end" data-pwf-dialog-backdrop-close aria-labelledby="shell-launcher-title">
+  <dialog class="pwf-overlay" id="shell-launcher" data-pwf-launcher data-pwf-overlay-placement="top-end" data-pwf-dialog-backdrop-close aria-labelledby="shell-launcher-title">
     <div class="pwf-overlay__header"><div><p class="pwf-eyebrow">Seitenübersicht</p><h2 id="shell-launcher-title">Menü</h2></div><button class="pwf-overlay__close" type="button" data-pwf-dialog-close aria-label="Menü schließen">×</button></div>
     <div class="pwf-overlay__body">
-      <section class="pwf-overlay__section"><h3 class="pwf-eyebrow pwf-overlay__section-title">Angepinnt</h3><div class="pwf-launcher-grid"><a class="pwf-launcher-card" href="./index.html" style="--pwf-launcher-accent:#3b82f6"><span class="pwf-launcher-card__icon" aria-hidden="true">⌂</span><strong>Start</strong></a><a class="pwf-launcher-card" href="./components.html" style="--pwf-launcher-accent:#22c55e"><span class="pwf-launcher-card__icon" aria-hidden="true">▦</span><strong>Komponenten</strong></a><a class="pwf-launcher-card" href="./settings.html" style="--pwf-launcher-accent:#f59e0b"><span class="pwf-launcher-card__icon" aria-hidden="true">☷</span><strong>Interface</strong></a></div></section>
+      <section class="pwf-overlay__section"><h3 class="pwf-eyebrow pwf-overlay__section-title">Seiten · angepinnte zuerst</h3><div class="pwf-launcher-grid"><a class="pwf-launcher-card" href="./index.html" style="--pwf-launcher-accent:#3b82f6"><span class="pwf-launcher-card__icon" aria-hidden="true">⌂</span><strong>Start</strong></a><a class="pwf-launcher-card" href="./components.html" style="--pwf-launcher-accent:#22c55e"><span class="pwf-launcher-card__icon" aria-hidden="true">▦</span><strong>Komponenten</strong></a><a class="pwf-launcher-card" href="./settings.html" style="--pwf-launcher-accent:#f59e0b"><span class="pwf-launcher-card__icon" aria-hidden="true">☷</span><strong>Interface</strong></a></div></section>
       <section class="pwf-overlay__section"><h3 class="pwf-eyebrow pwf-overlay__section-title">Zuletzt geöffnet</h3><div class="pwf-launcher-grid"><a class="pwf-launcher-card" href="./document.html?doc=standard" style="--pwf-launcher-accent:#a855f7"><span class="pwf-launcher-card__icon" aria-hidden="true">◆</span><strong>PWF Standard</strong></a><a class="pwf-launcher-card" href="./document.html?doc=architecture" style="--pwf-launcher-accent:#9ca3af"><span class="pwf-launcher-card__icon" aria-hidden="true">◎</span><strong>Architektur</strong></a><a class="pwf-launcher-card" href="./document.html?doc=roadmap" style="--pwf-launcher-accent:#ec4899"><span class="pwf-launcher-card__icon" aria-hidden="true">↝</span><strong>Roadmap</strong></a></div></section>
       <section class="pwf-overlay__section"><a class="pwf-launcher-all" href="./document.html?doc=docs"><span class="pwf-launcher-card__icon" aria-hidden="true">▦</span><span><strong>Alle Dokumente</strong><small>Handbuch und vollständige Referenz öffnen</small></span><span aria-hidden="true">›</span></a></section>
     </div>
