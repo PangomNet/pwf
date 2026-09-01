@@ -1,0 +1,12 @@
+{
+  "$schema": "../../schemas/theme.schema.json",
+  "schemaVersion": 1,
+  "id": "standard",
+  "name": "PWF Standard",
+  "description": "The canonical PWF interface theme, preserving the geometry, density, contrast, and Mica shell language proven in the ONA Monitor.",
+  "version": "0.1.0-alpha.1",
+  "pwfVersion": ">=0.1.0-alpha.1 <0.2.0",
+  "license": "MIT",
+  "styles": ["standard.css"],
+  "modes": ["light", "dark"]
+}

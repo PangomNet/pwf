@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="de" data-pwf-theme="standard" data-pwf-color-scheme="dark" data-pwf-contrast="standard" data-pwf-motion="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Start · PWF Referenzoberfläche</title>
+  <link rel="stylesheet" href="../../dist/pwf.css">
+  <link rel="stylesheet" href="../../dist/themes/standard.css">
+  <link rel="stylesheet" href="../../dist/themes/quiet.css">
+  <link rel="stylesheet" href="../../dist/themes/pangom.css">
+  <link rel="stylesheet" href="./shell-example.css">
+</head>
+<body class="pwf-app" data-pwf-accent="blue">
+  <a class="pwf-skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="pwf-app__header">
+    <div class="pwf-app__header-inner">
+      <div class="pwf-app__header-primary">
+        <a class="pwf-app__brand" href="./index.html" aria-label="PWF Startseite">
+          <span class="pwf-brandmark" aria-hidden="true"><span>P</span><span>W</span><span>F</span></span>
+        </a>
+        <nav class="pwf-app__tabs" aria-label="Geöffnete Seiten">
+          <a class="pwf-app__tab" href="./index.html" aria-current="page">
+            <svg class="pwf-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10M9 20v-6h6v6"/></svg>
+            Start
+          </a>
+          <a class="pwf-app__tab" href="../foundation/index.html">
+            <svg class="pwf-icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            Komponenten
+          </a>
+          <a class="pwf-app__tab" href="./settings.html">
+            <svg class="pwf-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="10" cy="18" r="2"/></svg>
+            Einstellungen
+          </a>
+        </nav>
+        <details class="pwf-app__mobile-pages">
+          <summary>
+            <svg class="pwf-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
+            <span class="pwf-app__mobile-current">Start</span><span aria-hidden="true">⌄</span>
+          </summary>
+          <nav class="pwf-app__mobile-menu" aria-label="Geöffnete Seiten mobil">
+            <a href="./index.html" aria-current="page">Start</a>
+            <a href="../foundation/index.html">Komponenten</a>
+            <a href="./settings.html">Einstellungen</a>
+          </nav>
+        </details>
+      </div>
+      <div class="pwf-app__actions">
+        <button class="pwf-app__action" type="button" aria-label="Suche öffnen" title="Suche" data-pwf-dialog-open="shell-search">
+          <svg class="pwf-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        </button>
+        <button class="pwf-app__action" type="button" aria-label="Seitenübersicht öffnen" title="Seitenübersicht" data-pwf-dialog-open="shell-launcher">
+          <svg class="pwf-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="5" cy="5" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="19" cy="5" r="1"/><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="19" r="1"/><circle cx="12" cy="19" r="1"/><circle cx="19" cy="19" r="1"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="pwf-app__subbar">
+    <div class="pwf-app__subbar-inner">
+      <nav class="pwf-breadcrumb" aria-label="Brotkrumen">
+        <ol><li><a href="./index.html">PWF</a></li><li aria-current="page">Start</li></ol>
+      </nav>
+      <nav class="pwf-context-nav" aria-label="Seitennavigation">
+        <a href="#bereiche">Bereiche</a><a href="#werkzeuge">Werkzeuge</a><a href="./settings.html">Interface</a><a href="../../docs/README.md">Über</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="pwf-app__main" id="main">
+    <div class="pwf-app__stage">
+      <div class="pwf-app__content pwf-content-stack">
+        <section class="pwf-page-hero" aria-labelledby="home-title">
+          <div>
+            <p class="pwf-eyebrow">PWF Referenzoberfläche</p>
+            <h1 id="home-title">Moin!</h1>
+            <p>Hier findest du die Bausteine des Pangom Web Frameworks. Öffne einen Bereich oder nutze oben rechts das Raster-Menü für Seiten und Schnellzugriffe.</p>
+          </div>
+          <div class="pwf-page-hero__aside"><span class="pwf-status-badge">Framework bereit</span></div>
+        </section>
+
+        <section class="pwf-content-section" id="bereiche" aria-labelledby="bereiche-title">
+          <div class="pwf-section-heading"><div><p class="pwf-eyebrow">Übersicht</p><h2 id="bereiche-title">Bereiche</h2></div></div>
+          <div class="pwf-nav-grid">
+            <a class="pwf-nav-card pwf-nav-card--solid" href="../foundation/index.html" style="--pwf-card-accent:#3b82f6">
+              <span class="pwf-nav-card__icon" aria-hidden="true"><svg class="pwf-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 9v11"/></svg></span>
+              <h3>Komponenten</h3><p>Formulare, Dialoge, Tabs, Tabellen, Loader und Toasts in der Referenz ansehen.</p>
+            </a>
+            <a class="pwf-nav-card" href="../../docs/README.md" style="--pwf-card-accent:#22c55e">
+              <span class="pwf-nav-card__icon" aria-hidden="true"><svg class="pwf-icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4H6.5A2.5 2.5 0 0 0 4 6.5z"/><path d="M4 6.5v13M8 8h8M8 12h7"/></svg></span>
+              <h3>Dokumentation</h3><p>Verhalten, Verträge und Beispiele des Frameworks verständlich nachvollziehen.</p>
+            </a>
+            <a class="pwf-nav-card" href="./settings.html" style="--pwf-card-accent:#f59e0b">
+              <span class="pwf-nav-card__icon" aria-hidden="true"><svg class="pwf-icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="10" cy="18" r="2"/></svg></span>
+              <h3>Interface</h3><p>Theme, Größe, Kontrast, Bewegung und lokale Profile auf einer eigenen Seite einstellen.</p>
+            </a>
+          </div>
+        </section>
+
+        <section class="pwf-content-section" id="werkzeuge" aria-labelledby="werkzeuge-title">
+          <div class="pwf-section-heading"><div><p class="pwf-eyebrow">Werkzeuge</p><h2 id="werkzeuge-title">Weitere Funktionen</h2></div></div>
+          <div class="pwf-nav-grid">
+            <article class="pwf-nav-card pwf-nav-card--disabled" style="--pwf-card-accent:#60a5fa">
+              <span class="pwf-nav-card__icon" aria-hidden="true"><svg class="pwf-icon" viewBox="0 0 24 24"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h3a3 3 0 0 0 3-3V8a3 3 0 0 1 3-3"/></svg></span><span class="pwf-nav-card__badge">Demnächst</span>
+              <h3>App Center</h3><p>Erweiterungen mit Manifest, Abhängigkeiten und Fähigkeiten verwalten.</p>
+            </article>
+            <a class="pwf-nav-card" href="../../ARCHITECTURE.md" style="--pwf-card-accent:#9ca3af">
+              <span class="pwf-nav-card__icon" aria-hidden="true"><svg class="pwf-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></span>
+              <h3>Architektur</h3><p>Module, Grenzen, stabile Verträge und Progressive Enhancement kennenlernen.</p>
+            </a>
+            <a class="pwf-nav-card" href="../../ROADMAP.md" style="--pwf-card-accent:#a855f7">
+              <span class="pwf-nav-card__icon" aria-hidden="true"><svg class="pwf-icon" viewBox="0 0 24 24"><path d="M18 8a3 3 0 1 0-6 0c0 4 3 5 3 8M6 16a3 3 0 1 0 6 0c0-4-3-5-3-8"/><path d="M6 19v2M18 3v2"/></svg></span>
+              <h3>Roadmap</h3><p>Direkt zur Übersicht der geplanten Module und nächsten Meilensteine wechseln.</p>
+            </a>
+          </div>
+        </section>
+
+        <section class="pwf-info-grid" aria-label="Bedienhinweise">
+          <article class="pwf-info-card"><span class="pwf-info-card__icon" aria-hidden="true"><svg class="pwf-icon" viewBox="0 0 24 24"><circle cx="5" cy="5" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="19" cy="5" r="1"/><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></span><div><h3>Seiten anpinnen</h3><p>Im Raster-Menü erscheinen später zuletzt geöffnete und dauerhaft angepinnte Seiten.</p></div></article>
+          <article class="pwf-info-card"><span class="pwf-info-card__icon" aria-hidden="true"><svg class="pwf-icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="10" cy="18" r="2"/></svg></span><div><h3>Darstellung anpassen</h3><p>Die vollständige Einstellungsseite bündelt Design und Größe der gesamten Oberfläche.</p></div></article>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <div class="pwf-app__framework-divider"><span>Pangom Web Framework</span></div>
+
+  <footer class="pwf-app__footer">
+    <div class="pwf-app__footer-inner">
+      <a class="pwf-button pwf-button--secondary shell-example__footer-button" href="./settings.html">
+        <svg class="pwf-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="10" cy="18" r="2"/></svg>Interface
+      </a>
+      <nav class="pwf-app__footer-links" aria-label="Fußnavigation"><a href="../../README.md">Projekt</a><a href="../../LICENSE">Lizenz</a><a href="../../docs/README.md">Dokumentation</a></nav>
+      <div class="pwf-app__footer-meta"><span class="shell-example__version">PWF <span data-pwf-version>source</span></span><a class="pwf-app__brand shell-example__footer-mark" href="./index.html" aria-label="PWF Startseite"><span class="pwf-brandmark" aria-hidden="true"><span>P</span><span>W</span><span>F</span></span></a></div>
+    </div>
+  </footer>
+
+  <dialog class="pwf-dialog" id="shell-search" aria-labelledby="shell-search-title">
+    <div class="pwf-dialog__body pwf-stack"><p class="pwf-eyebrow">Schnellsuche</p><h2 class="shell-example__dialog-title" id="shell-search-title">Framework durchsuchen</h2><label class="pwf-field"><span class="pwf-label">Suchbegriff</span><input class="pwf-input" type="search" placeholder="Komponenten, Themes, Versionen …"></label><nav class="shell-example__search-results" aria-label="Vorschläge"><a href="../../docs/framework-behavior.md"><strong>Framework-Verhalten</strong><small>Garantien und Ausfallverhalten</small></a><a href="../../docs/themes.md"><strong>Eigene Themes</strong><small>Vertrag und Beispiel</small></a></nav></div>
+    <div class="pwf-dialog__footer"><button class="pwf-button" type="button" data-pwf-dialog-close>Schließen</button></div>
+  </dialog>
+
+  <dialog class="pwf-dialog" id="shell-launcher" aria-labelledby="shell-launcher-title">
+    <div class="pwf-dialog__body pwf-stack"><p class="pwf-eyebrow">Seitenübersicht</p><h2 class="shell-example__dialog-title" id="shell-launcher-title">Menü</h2><div class="shell-example__launcher-grid"><a class="shell-example__launcher-link" href="./index.html"><strong>Start</strong><small>Referenzübersicht</small></a><a class="shell-example__launcher-link" href="../foundation/index.html"><strong>Komponenten</strong><small>Foundation-Labor</small></a><a class="shell-example__launcher-link" href="./settings.html"><strong>Einstellungen</strong><small>Interface konfigurieren</small></a><a class="shell-example__launcher-link" href="../../docs/README.md"><strong>Dokumentation</strong><small>Handbuch und Referenz</small></a></div></div>
+    <div class="pwf-dialog__footer"><button class="pwf-button" type="button" data-pwf-dialog-close>Schließen</button></div>
+  </dialog>
+
+  <script type="module" src="./shell.js"></script>
+</body>
+</html>

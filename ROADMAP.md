@@ -16,7 +16,13 @@ usable on its own; completion does not require removing working ONA code.
 Exit: a static application can use the foundation without ONA globals or cookies,
 and build/test output is reproducible.
 
-## Phase 1 — Application shell
+## Phase 1 — Application shell (in progress)
+
+- Canonical PWF Standard theme with the Monitor-derived 1600 px stage, 17 px
+  scale, Mica header, route tabs, content cards, divider, and footer.
+- Initial responsive shell frame, desktop page tabs, mobile page selector,
+  breadcrumbs, contextual navigation, route accents, content cards, and footer.
+- First complete-page home and settings reference routes.
 
 - Separate settings page and compact quick-settings surface.
 - App launcher with pages, favorites, history, and accessible drag-and-drop.

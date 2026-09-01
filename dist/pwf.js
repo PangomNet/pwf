@@ -4,7 +4,7 @@ export { initTabs, selectTab } from './tabs.js';
 export { createToastRegion, showToast } from './toast.js';
 
 /** Framework version injected from package.json by the build. */
-export const PWF_VERSION = '0.1.0-alpha.1';
+export const PWF_VERSION = '0.1.0-alpha.2';
 
 import { initDialogs } from './dialog.js';
 import { initTabs } from './tabs.js';

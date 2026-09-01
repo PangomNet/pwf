@@ -1,0 +1,147 @@
+# Application shell
+
+The PWF shell translates the proven ONA Monitor application language into
+product-neutral contracts. Its visible geometry, density, dark-surface
+hierarchy, cards, header, secondary bar, and footer form the canonical PWF
+Standard look. It contains no ONA branding, routes, data, cookies, or global
+state. Applications supply their own brand, page catalog, route accents, and
+content. Exact values and provenance are recorded in `docs/design-standard.md`.
+
+The executable reference begins at `examples/shell/index.html`; its settings
+route is `examples/shell/settings.html`.
+
+## Application shell
+
+`.pwf-app` forms a five-row page: application header, secondary bar, main
+content, framework divider, and footer. Use it on the body or another element
+that owns the complete viewport. The header is sticky, while the divider and
+footer remain in normal document flow.
+
+```html
+<body class="pwf-app" data-pwf-accent="blue">
+  <header class="pwf-app__header">…</header>
+  <div class="pwf-app__subbar">…</div>
+  <main class="pwf-app__main" id="main">
+    <div class="pwf-app__stage">
+      <div class="pwf-app__content">…</div>
+    </div>
+  </main>
+  <div class="pwf-app__framework-divider"><span>Pangom Web Framework</span></div>
+  <footer class="pwf-app__footer">…</footer>
+</body>
+```
+
+The stage uses the 1600 px wide layout and subtle side boundaries. Its nested
+content wrapper limits ordinary pages to 1152 px. Maps, timelines, editors, and
+media workspaces may omit `.pwf-app__content` and use the complete stage without
+overriding the shell.
+
+`data-pwf-accent` accepts the bundled convenience values `blue`, `green`, `gold`,
+and `violet`. Applications may instead set `--pwf-route-accent` directly. Accent
+color supplements headings and current-state indicators; it never carries status
+meaning by itself.
+
+## Brand
+
+`.pwf-app__brand` is an ordinary home link. The reference `pwf-brandmark` is a
+CSS-and-text placeholder, not a required logo. Applications may replace its
+contents with accessible text or a licensed image while preserving the link and
+accessible name.
+
+## Page navigation
+
+Desktop tabs are links inside `.pwf-app__tabs`. The active page uses
+`aria-current="page"`. The shell does not create, close, reorder, remember, or
+intercept these links yet; future navigation and launcher modules will manage
+those behaviors through explicit adapters.
+
+```html
+<nav class="pwf-app__tabs" aria-label="Open pages">
+  <a class="pwf-app__tab" href="/home/" aria-current="page">Home</a>
+  <a class="pwf-app__tab" href="/settings/">Settings</a>
+</nav>
+```
+
+At narrow widths, desktop tabs hide and `.pwf-app__mobile-pages` appears. It uses
+native `<details>` and ordinary links, so page selection works without JavaScript.
+Applications should render the same destinations into both views from one route
+catalog instead of maintaining two independent lists by hand.
+
+Breadcrumbs use a named navigation landmark and an ordered list. Contextual links
+in `.pwf-context-nav` are secondary destinations for the current page. Both remain
+ordinary links and may horizontally scroll on small screens.
+
+Buttons in `.pwf-app__actions` are reserved for actions such as opening search or
+the app launcher. They must not replace addressable navigation destinations.
+
+## Page hero
+
+`.pwf-page-hero` holds the page identity and an optional status or action area.
+The main heading remains a real `h1`. `.pwf-eyebrow` provides a short category;
+it is not a heading replacement.
+
+`.pwf-status-badge` includes a decorative dot and visible text. Applications can
+set `--pwf-status-color`, but the wording remains the authoritative status.
+
+## Navigation cards
+
+Use `.pwf-nav-card` on an anchor when the card opens a page. The whole card is the
+link, so keyboard and pointer users receive the same target. A short label in
+`.pwf-nav-card__icon` is decorative and should be hidden from assistive technology
+when the heading already names the destination.
+
+```html
+<a class="pwf-nav-card" href="/documentation/">
+  <span class="pwf-nav-card__icon" aria-hidden="true">DOC</span>
+  <h3>Documentation</h3>
+  <p>Guides, behavior, and exact reference.</p>
+</a>
+```
+
+Cards accept a local `--pwf-card-accent`. They reflow from three columns to two
+and then one. The layout does not truncate headings or descriptions.
+
+## Information cards
+
+`.pwf-info-card` presents explanatory content that is not itself a destination.
+Use an article or section instead of adding click behavior. When an information
+card needs a related route, include a normal link in its content.
+
+## Settings page
+
+Substantial settings belong on a complete, addressable page. The layout combines
+a section navigation with linkable `.pwf-settings-section` elements. Native form
+controls express actual choices; storage and consent remain application concerns.
+
+On wide screens the section navigation stays visible. On narrow screens it
+becomes a horizontal list above the settings. Every section ID remains usable as
+a URL fragment, and scroll margins keep its heading clear of the sticky header.
+
+The reference page intentionally does not persist changes. It demonstrates the
+foundation preference API and explains that an application must inject storage
+only after its own policy decision.
+
+The final quick-settings surface is a separate future component. It will contain
+only small frequent switches and link to this complete page for everything else.
+
+## Progressive enhancement and failure behavior
+
+The current shell CSS requires no JavaScript. Header tabs, mobile page selection,
+breadcrumbs, cards, section links, and footer links work through complete page
+loads. The reference uses the existing optional dialog enhancement for search and
+launcher prototypes; those are not yet the final search or launcher modules.
+
+If scripts fail, the page content and all addressable routes remain available.
+Applications should provide a normal search page and full page catalog before a
+future overlay intercepts those destinations.
+
+## Accessibility checklist
+
+- Include one visible skip link targeting main content.
+- Give each navigation landmark a distinct accessible name.
+- Use `aria-current`, not color alone, for current pages and sections.
+- Preserve one `h1` and a logical heading order inside cards and settings.
+- Keep every page destination as an anchor with a valid URL.
+- Do not place controls inside card links.
+- Test the sticky header, mobile details menu, horizontal context links, focus
+  outlines, increased contrast, reduced motion, and interface scaling.

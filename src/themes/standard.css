@@ -1,0 +1,78 @@
+[data-pwf-theme="standard"] {
+  --pwf-font-size-base: 1.0625rem;
+  --pwf-font-display: var(--pwf-font-sans);
+  --pwf-layout-normal: 72rem;
+  --pwf-layout-wide: 1600px;
+  --pwf-layout-gutter: 1rem;
+  --pwf-color-accent: #2563eb;
+  --pwf-color-accent-hover: #3b82f6;
+  --pwf-color-on-accent: #ffffff;
+  --pwf-color-canvas: #eef0f3;
+  --pwf-color-canvas-accent: rgba(255, 255, 255, 0.72);
+  --pwf-color-surface: rgba(255, 255, 255, 0.7);
+  --pwf-color-surface-solid: #ffffff;
+  --pwf-color-surface-muted: #f3f4f6;
+  --pwf-color-text: #000000;
+  --pwf-color-text-muted: #6b7280;
+  --pwf-color-border: #d1d5db;
+  --pwf-color-focus: #2563eb;
+  --pwf-color-success: #22c55e;
+  --pwf-blur-surface: 18px;
+  --pwf-radius-sm: 0.5rem;
+  --pwf-radius-md: 0.75rem;
+  --pwf-radius-lg: 1.5rem;
+  --pwf-shadow-sm: 0 0.125rem 0.4rem rgba(15, 23, 42, 0.06);
+  --pwf-shadow-md: 0 1rem 2.5rem rgba(15, 23, 42, 0.12);
+  --pwf-shell-header: rgba(255, 255, 255, 0.7);
+  --pwf-shell-stage: #ffffff;
+  --pwf-shell-footer: #f9fafb;
+  --pwf-shell-divider: #f3f4f6;
+}
+
+[data-pwf-theme="standard"][data-pwf-color-scheme="dark"],
+.dark[data-pwf-theme="standard"] {
+  --pwf-color-accent: #3b82f6;
+  --pwf-color-accent-hover: #60a5fa;
+  --pwf-color-on-accent: #ffffff;
+  --pwf-color-canvas: #111316;
+  --pwf-color-canvas-accent: rgba(46, 46, 46, 0.45);
+  --pwf-color-surface: rgba(255, 255, 255, 0.05);
+  --pwf-color-surface-solid: #0a0a0a;
+  --pwf-color-surface-muted: #111111;
+  --pwf-color-text: #ffffff;
+  --pwf-color-text-muted: #9ca3af;
+  --pwf-color-border: #222222;
+  --pwf-color-focus: #60a5fa;
+  --pwf-color-success: #22c55e;
+  --pwf-shadow-sm: 0 0.125rem 0.4rem rgba(0, 0, 0, 0.24);
+  --pwf-shadow-md: 0 1rem 2.5rem rgba(0, 0, 0, 0.5);
+  --pwf-shell-header: rgba(10, 10, 10, 0.68);
+  --pwf-shell-stage: #050505;
+  --pwf-shell-footer: #0f0f0f;
+  --pwf-shell-divider: #111111;
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-pwf-theme="standard"]:not([data-pwf-color-scheme]),
+  [data-pwf-theme="standard"][data-pwf-color-scheme="auto"] {
+    --pwf-color-accent: #3b82f6;
+    --pwf-color-accent-hover: #60a5fa;
+    --pwf-color-on-accent: #ffffff;
+    --pwf-color-canvas: #111316;
+    --pwf-color-canvas-accent: rgba(46, 46, 46, 0.45);
+    --pwf-color-surface: rgba(255, 255, 255, 0.05);
+    --pwf-color-surface-solid: #0a0a0a;
+    --pwf-color-surface-muted: #111111;
+    --pwf-color-text: #ffffff;
+    --pwf-color-text-muted: #9ca3af;
+    --pwf-color-border: #222222;
+    --pwf-color-focus: #60a5fa;
+    --pwf-color-success: #22c55e;
+    --pwf-shadow-sm: 0 0.125rem 0.4rem rgba(0, 0, 0, 0.24);
+    --pwf-shadow-md: 0 1rem 2.5rem rgba(0, 0, 0, 0.5);
+    --pwf-shell-header: rgba(10, 10, 10, 0.68);
+    --pwf-shell-stage: #050505;
+    --pwf-shell-footer: #0f0f0f;
+    --pwf-shell-divider: #111111;
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "@pangom/pwf",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "description": "Modular, accessible web application framework with optional Tailwind CSS integration",
   "type": "module",
   "license": "MIT",

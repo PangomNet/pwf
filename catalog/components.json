@@ -68,6 +68,46 @@
       "semantics": "Messages use polite status announcements; danger messages use alert.",
       "documentation": "docs/components/foundation.md#toast",
       "enhancement": "The API inserts text with textContent and never accepts HTML."
+    },
+    {
+      "id": "app-shell",
+      "status": "experimental",
+      "css": ["pwf-app", "pwf-app__header", "pwf-app__header-primary", "pwf-app__main", "pwf-app__stage", "pwf-app__content", "pwf-app__framework-divider", "pwf-app__footer"],
+      "javascript": null,
+      "semantics": "Compose one banner, one main landmark, and one contentinfo landmark around complete page content.",
+      "documentation": "docs/components/shell.md#application-shell"
+    },
+    {
+      "id": "page-navigation",
+      "status": "experimental",
+      "css": ["pwf-app__tabs", "pwf-app__tab", "pwf-app__mobile-pages", "pwf-breadcrumb", "pwf-context-nav"],
+      "javascript": null,
+      "semantics": "Every destination is an ordinary link; aria-current identifies the current page or location.",
+      "documentation": "docs/components/shell.md#page-navigation"
+    },
+    {
+      "id": "page-hero",
+      "status": "experimental",
+      "css": ["pwf-page-hero", "pwf-eyebrow", "pwf-status-badge"],
+      "javascript": null,
+      "semantics": "Use a section linked to the page heading and keep status text readable without relying on color.",
+      "documentation": "docs/components/shell.md#page-hero"
+    },
+    {
+      "id": "navigation-card",
+      "status": "experimental",
+      "css": ["pwf-nav-grid", "pwf-nav-card", "pwf-nav-card__icon"],
+      "javascript": null,
+      "semantics": "Use an anchor for page destinations and preserve a descriptive accessible name.",
+      "documentation": "docs/components/shell.md#navigation-cards"
+    },
+    {
+      "id": "settings-layout",
+      "status": "experimental",
+      "css": ["pwf-settings-layout", "pwf-settings-nav", "pwf-settings-section", "pwf-setting-row"],
+      "javascript": null,
+      "semantics": "Expose large settings groups as linkable sections on a complete page with native form controls.",
+      "documentation": "docs/components/shell.md#settings-page"
     }
   ]
 }

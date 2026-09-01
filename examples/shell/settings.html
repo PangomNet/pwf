@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="de" data-pwf-theme="standard" data-pwf-color-scheme="dark" data-pwf-contrast="standard" data-pwf-motion="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interface · PWF Referenzoberfläche</title>
+  <link rel="stylesheet" href="../../dist/pwf.css">
+  <link rel="stylesheet" href="../../dist/themes/standard.css">
+  <link rel="stylesheet" href="../../dist/themes/quiet.css">
+  <link rel="stylesheet" href="../../dist/themes/pangom.css">
+  <link rel="stylesheet" href="./shell-example.css">
+</head>
+<body class="pwf-app" data-pwf-accent="violet">
+  <a class="pwf-skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="pwf-app__header">
+    <div class="pwf-app__header-inner">
+      <div class="pwf-app__header-primary">
+        <a class="pwf-app__brand" href="./index.html" aria-label="PWF Startseite"><span class="pwf-brandmark" aria-hidden="true"><span>P</span><span>W</span><span>F</span></span></a>
+        <nav class="pwf-app__tabs" aria-label="Geöffnete Seiten">
+          <a class="pwf-app__tab" href="./index.html"><svg class="pwf-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/></svg>Start</a>
+          <a class="pwf-app__tab" href="../foundation/index.html"><svg class="pwf-icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Komponenten</a>
+          <a class="pwf-app__tab" href="./settings.html" aria-current="page"><svg class="pwf-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="10" cy="18" r="2"/></svg>Einstellungen</a>
+        </nav>
+        <details class="pwf-app__mobile-pages"><summary><svg class="pwf-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2"/></svg><span class="pwf-app__mobile-current">Einstellungen</span><span aria-hidden="true">⌄</span></summary><nav class="pwf-app__mobile-menu" aria-label="Geöffnete Seiten mobil"><a href="./index.html">Start</a><a href="../foundation/index.html">Komponenten</a><a href="./settings.html" aria-current="page">Einstellungen</a></nav></details>
+      </div>
+      <div class="pwf-app__actions">
+        <button class="pwf-app__action" type="button" aria-label="Suche öffnen" data-pwf-dialog-open="shell-search"><svg class="pwf-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button>
+        <button class="pwf-app__action" type="button" aria-label="Seitenübersicht öffnen" data-pwf-dialog-open="shell-launcher"><svg class="pwf-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="5" cy="5" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="19" cy="5" r="1"/><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="pwf-app__subbar">
+    <div class="pwf-app__subbar-inner">
+      <nav class="pwf-breadcrumb" aria-label="Brotkrumen">
+        <ol><li><a href="./index.html">PWF</a></li><li aria-current="page">Interface</li></ol>
+      </nav>
+      <nav class="pwf-context-nav" aria-label="Einstellungsbereiche">
+        <a href="#appearance">Darstellung</a><a href="#accessibility">Barrierefreiheit</a><a href="#profile">Profil</a><a href="#privacy">Datenschutz</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="pwf-app__main" id="main">
+    <div class="pwf-app__stage">
+    <div class="pwf-app__content pwf-content-stack">
+      <section class="pwf-page-hero" aria-labelledby="settings-title">
+        <div>
+          <p class="pwf-eyebrow">Interface Konfiguration</p>
+          <h1 id="settings-title">Einstellungen auf einer eigenen Seite.</h1>
+          <p>Große Einstellungsgruppen bleiben verlinkbar, lesbar und auch bei einem normalen Seitenaufruf vollständig nutzbar. Das Schnellmenü enthält später nur kleine, häufig benötigte Schalter.</p>
+        </div>
+        <div class="pwf-page-hero__aside"><span class="pwf-status-badge">Demo ohne Speicherung</span></div>
+      </section>
+
+      <div class="pwf-settings-layout">
+        <nav class="pwf-settings-nav" aria-label="Einstellungsnavigation">
+          <a href="#appearance" aria-current="location">Darstellung</a>
+          <a href="#accessibility">Barrierefreiheit</a>
+          <a href="#language">Sprache</a>
+          <a href="#profile">Lokales Profil</a>
+          <a href="#privacy">Datenschutz</a>
+        </nav>
+
+        <div class="pwf-settings-content">
+          <section class="pwf-settings-section" id="appearance" aria-labelledby="appearance-title">
+            <div class="pwf-settings-section__heading"><h2 id="appearance-title">Darstellung</h2><p>Theme und Farbschema ändern diese Seite sofort, werden in der Demo aber nicht gespeichert.</p></div>
+            <div class="pwf-setting-row">
+              <div><h3>Theme</h3><p>PWF Standard ist der genaue Monitor-basierte Ausgangspunkt; alle Themes bleiben separate, entfernbare Dateien.</p></div>
+              <label class="pwf-field"><span class="pwf-label pwf-visually-hidden">Theme</span><select class="pwf-select" data-shell-theme><option value="standard" selected>PWF Standard</option><option value="quiet">Quiet</option><option value="pangom">Pangom</option></select></label>
+            </div>
+            <div class="pwf-setting-row">
+              <div><h3>Farbschema</h3><p>Automatisch folgt der Einstellung des Betriebssystems.</p></div>
+              <label class="pwf-field"><span class="pwf-label pwf-visually-hidden">Farbschema</span><select class="pwf-select" data-shell-color-scheme><option value="auto">Automatisch</option><option value="light">Hell</option><option value="dark" selected>Dunkel</option></select></label>
+            </div>
+            <div class="pwf-setting-row">
+              <div><h3>Interface-Skalierung</h3><p>Skaliert Typografie und alle rem-basierten Komponenten gemeinsam.</p></div>
+              <label class="pwf-field"><span class="pwf-label pwf-visually-hidden">Interface-Skalierung</span><input class="pwf-range" data-shell-scale type="range" min="0.75" max="1.5" step="0.05" value="1"></label>
+            </div>
+          </section>
+
+          <section class="pwf-settings-section" id="accessibility" aria-labelledby="accessibility-title">
+            <div class="pwf-settings-section__heading"><h2 id="accessibility-title">Barrierefreiheit</h2><p>Diese Einstellungen bleiben vom gewählten Theme unabhängig.</p></div>
+            <div class="pwf-setting-row">
+              <div><h3>Erhöhter Kontrast</h3><p>Verstärkt Rahmen und zurückhaltende Texte, ohne das Theme zu ersetzen.</p></div>
+              <label class="pwf-choice"><input type="checkbox" data-shell-contrast><span>Mehr Kontrast verwenden</span></label>
+            </div>
+            <div class="pwf-setting-row">
+              <div><h3>Reduzierte Bewegung</h3><p>Stoppt dekorative Animationen und verkürzt Übergänge.</p></div>
+              <label class="pwf-choice"><input type="checkbox" data-shell-motion><span>Bewegung reduzieren</span></label>
+            </div>
+          </section>
+
+          <section class="pwf-settings-section" id="language" aria-labelledby="language-title">
+            <div class="pwf-settings-section__heading"><h2 id="language-title">Language</h2><p>The foundation reserves the contract; translations arrive with the shell service layer.</p></div>
+            <div class="pwf-setting-row">
+              <div><h3>Interface language</h3><p>Content language remains under application control.</p></div>
+              <label class="pwf-field"><span class="pwf-label pwf-visually-hidden">Interface language</span><select class="pwf-select" disabled><option>English</option><option>Deutsch</option></select></label>
+            </div>
+          </section>
+
+          <section class="pwf-settings-section" id="profile" aria-labelledby="profile-title">
+            <div class="pwf-settings-section__heading"><h2 id="profile-title">Local profile</h2><p>Prepared slots are visible, but the foundation never stores personal data by itself.</p></div>
+            <div class="pwf-info-grid">
+              <article class="pwf-info-card"><span class="pwf-info-card__icon" aria-hidden="true">1</span><div><h3>Primary slot</h3><p>Not configured. A future adapter may provide a nickname with explicit consent.</p></div></article>
+              <article class="pwf-info-card"><span class="pwf-info-card__icon" aria-hidden="true">2</span><div><h3>Reserved slot</h3><p>Available for an additional local profile without changing the settings layout.</p></div></article>
+            </div>
+          </section>
+
+          <section class="pwf-settings-section" id="privacy" aria-labelledby="privacy-title">
+            <div class="pwf-settings-section__heading"><h2 id="privacy-title">Privacy and storage</h2><p>PWF Core does not write cookies, register service workers, or persist preferences.</p></div>
+            <div class="pwf-setting-row">
+              <div><h3>Demo status</h3><p>All changes disappear on reload. Applications inject storage only after their own policy and consent decision.</p></div>
+              <span class="pwf-status-badge">Necessary state only</span>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
+
+  <div class="pwf-app__framework-divider"><span>Pangom Web Framework</span></div>
+
+  <footer class="pwf-app__footer">
+    <div class="pwf-app__footer-inner">
+      <a class="pwf-button pwf-button--secondary shell-example__footer-button" href="./index.html">Zurück zum Start</a>
+      <nav class="pwf-app__footer-links" aria-label="Fußnavigation"><a href="../../README.md">Projekt</a><a href="../../LICENSE">Lizenz</a><a href="../../docs/README.md">Dokumentation</a></nav>
+      <div class="pwf-app__footer-meta"><span class="shell-example__version">PWF <span data-pwf-version>source</span></span><a class="pwf-app__brand shell-example__footer-mark" href="./index.html" aria-label="PWF Startseite"><span class="pwf-brandmark" aria-hidden="true"><span>P</span><span>W</span><span>F</span></span></a></div>
+    </div>
+  </footer>
+
+  <dialog class="pwf-dialog" id="shell-search" aria-labelledby="shell-search-title">
+    <div class="pwf-dialog__body pwf-stack"><p class="pwf-eyebrow">Quick search prototype</p><h2 id="shell-search-title">Find a framework topic</h2><label class="pwf-field"><span class="pwf-label">Search</span><input class="pwf-input" type="search" placeholder="Components, themes, versioning…"></label><nav class="shell-example__search-results" aria-label="Suggested results"><a href="../../docs/framework-behavior.md">How PWF behaves</a><a href="../../docs/components/foundation.md">Foundation components</a><a href="../../docs/themes.md">Theme authoring</a></nav></div>
+    <div class="pwf-dialog__footer"><button class="pwf-button" type="button" data-pwf-dialog-close>Close</button></div>
+  </dialog>
+
+  <dialog class="pwf-dialog" id="shell-launcher" aria-labelledby="shell-launcher-title">
+    <div class="pwf-dialog__body pwf-stack"><p class="pwf-eyebrow">App launcher prototype</p><h2 id="shell-launcher-title">Pages</h2><div class="shell-example__launcher-grid"><a class="shell-example__launcher-link" href="./index.html"><strong>Home</strong><small>Reference overview</small></a><a class="shell-example__launcher-link" href="../foundation/index.html"><strong>Components</strong><small>Foundation laboratory</small></a><a class="shell-example__launcher-link" href="./settings.html"><strong>Settings</strong><small>Full interface configuration</small></a><a class="shell-example__launcher-link" href="../../docs/README.md"><strong>Documentation</strong><small>Guides and reference</small></a></div></div>
+    <div class="pwf-dialog__footer"><button class="pwf-button" type="button" data-pwf-dialog-close>Close</button></div>
+  </dialog>
+
+  <script type="module" src="./shell.js"></script>
+</body>
+</html>

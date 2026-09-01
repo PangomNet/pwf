@@ -16,6 +16,10 @@ site doubles as a reference implementation and a continuous integration target.
 
 - [Foundation components](components/foundation.md) contains semantic HTML
   recipes and behavior notes.
+- [Application shell](components/shell.md) documents the monitor-inspired but
+  product-neutral frame, navigation, content patterns, and settings layout.
+- [PWF Standard design language](design-standard.md) records the exact shell
+  geometry, surface hierarchy, route accents, typography boundary, and responsive behavior.
 - [Theme authoring](themes.md) explains removable token-only themes.
 - [Versioning](versioning.md) explains independent framework, application,
   theme, extension, and schema versions.
