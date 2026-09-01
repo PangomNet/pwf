@@ -30,7 +30,7 @@ metadata should display both values, for example:
 
 ```text
 ONA Monitor 0.3.3
-PWF 0.1.0-alpha.3
+PWF 0.1.0-alpha.4
 ```
 
 An application records a compatible PWF range and may add its own build identifier

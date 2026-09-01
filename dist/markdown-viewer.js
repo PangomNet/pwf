@@ -2,7 +2,9 @@ const inlinePattern = /(\[([^\]]+)\]\(([^)\s]+)(?:\s+"[^"]*")?\)|`([^`]+)`|\*\*(
 
 function safeLink(href) {
   const value = href.trim();
-  return /^(?:https?:|mailto:|#|\.\.?\/)/i.test(value) ? value : '#';
+  if (!value || value.startsWith('//')) return '#';
+  if (/^[a-z][a-z0-9+.-]*:/i.test(value) && !/^(?:https?|mailto):/i.test(value)) return '#';
+  return value;
 }
 
 function appendInline(parent, source, resolveLink) {
@@ -153,9 +155,15 @@ export function renderMarkdown(markdown, target, options = {}) {
         const itemMatch = lines[index].match(/^\s*(?:([-+*])|(\d+)\.)\s+(.+)$/);
         if (!itemMatch || (itemMatch[2] != null) !== ordered) break;
         const item = document.createElement('li');
-        appendInline(item, itemMatch[3], resolveLink);
-        list.append(item);
+        const itemLines = [itemMatch[3]];
         index += 1;
+        while (index < lines.length && /^\s{2,}\S/.test(lines[index]) &&
+          !/^\s*(?:[-+*]|\d+\.)\s+/.test(lines[index])) {
+          itemLines.push(lines[index].trim());
+          index += 1;
+        }
+        appendInline(item, itemLines.join(' '), resolveLink);
+        list.append(item);
       }
       fragment.append(list);
       continue;

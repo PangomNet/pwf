@@ -7,8 +7,10 @@ Standard look. It contains no ONA branding, routes, data, cookies, or global
 state. Applications supply their own brand, page catalog, route accents, and
 content. Exact values and provenance are recorded in `docs/design-standard.md`.
 
-The executable reference begins at `examples/shell/index.html`; its settings
-route is `examples/shell/settings.html`.
+The executable reference begins at `examples/shell/index.html`; its component
+showcase is `examples/shell/components.html`, its Markdown handbook is
+`examples/shell/document.html`, and its settings route is
+`examples/shell/settings.html`.
 
 ## Application shell
 
@@ -18,7 +20,7 @@ that owns the complete viewport. The header is sticky, while the divider and
 footer remain in normal document flow.
 
 ```html
-<body class="pwf-app" data-pwf-accent="blue">
+<body class="pwf-app" data-pwf-accent="blue" data-pwf-layout-mode="normal">
   <header class="pwf-app__header">…</header>
   <div class="pwf-app__subbar">…</div>
   <main class="pwf-app__main" id="main">
@@ -31,10 +33,12 @@ footer remain in normal document flow.
 </body>
 ```
 
-The stage uses the 1600 px wide layout and subtle side boundaries. Its nested
-content wrapper limits ordinary pages to 1152 px. Maps, timelines, editors, and
-media workspaces may omit `.pwf-app__content` and use the complete stage without
-overriding the shell.
+The `normal` mode limits ordinary content to 1152 px inside the 1600 px stage.
+`wide` removes the inner content limit while retaining the bounded stage and its
+side boundaries. `fluid` removes both limits and stage boundaries for maps,
+timelines, editors, and media workspaces. Set the mode through
+`data-pwf-layout-mode` on `.pwf-app`; the example controls expose all three
+states without persistence.
 
 `data-pwf-accent` accepts the bundled convenience values `blue`, `green`, `gold`,
 and `violet`. Applications may instead set `--pwf-route-accent` directly. Accent
@@ -91,10 +95,18 @@ and closes through `data-pwf-dialog-close`, Escape, or the optional
 - `top-end`: a 28rem app launcher aligned to the upper end edge;
 - `bottom`: a 28rem centered bottom sheet for quick settings.
 
-Search results and launcher cards remain ordinary links. Quick settings contain
-only frequent theme, scheme, scale, contrast, or motion controls and end with a
-link to the complete settings page. Applications may choose a normal page route
-instead of an overlay without changing the underlying destination contract.
+Search results and launcher cards remain ordinary links. The search placement
+intentionally leaves page content visually undimmed; its field uses
+`autofocus data-pwf-dialog-select` so opening the tool focuses and selects it for immediate
+typing. Quick settings contain only frequent theme, scheme, width, scale,
+contrast, or motion controls and end with a link to the complete settings page.
+Applications may choose a normal page route instead of an overlay without
+changing the underlying destination contract.
+
+Long horizontal section navigation may opt into the documented
+[scroll rail](scroll-rail.md). The themed rail adds mouse dragging, wheel, touch,
+and keyboard handling while the underlying navigation remains an ordinary
+overflowing list of links.
 
 ## Content subpages
 
@@ -154,8 +166,8 @@ The reference page intentionally does not persist changes. It demonstrates the
 foundation preference API and explains that an application must inject storage
 only after its own policy decision.
 
-The final quick-settings surface is a separate future component. It will contain
-only small frequent switches and link to this complete page for everything else.
+The reference quick-settings surface deliberately contains only small frequent
+controls and links to this complete page for everything else.
 
 ## Progressive enhancement and failure behavior
 

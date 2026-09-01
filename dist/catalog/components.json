@@ -119,6 +119,15 @@
       "enhancement": "data-pwf-overlay-placement selects search, top-end launcher, or bottom quick-settings geometry without changing dialog behavior."
     },
     {
+      "id": "scroll-rail",
+      "status": "experimental",
+      "css": ["pwf-scroll-rail", "pwf-scroll-rail__viewport", "pwf-scroll-rail__track", "pwf-scroll-rail__thumb"],
+      "javascript": "initScrollRails",
+      "semantics": "Keep the underlying region natively scrollable and give the scrollbar thumb an accessible name plus aria-controls.",
+      "documentation": "docs/components/scroll-rail.md#scroll-rail",
+      "enhancement": "Pointer drag, track clicks, vertical wheel input, resize updates, and horizontal scrollbar keyboard commands enhance the same overflow viewport."
+    },
+    {
       "id": "markdown-viewer",
       "status": "experimental",
       "css": ["pwf-document-layout", "pwf-document-nav", "pwf-markdown"],

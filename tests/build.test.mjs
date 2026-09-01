@@ -15,7 +15,9 @@ test('foundation build is complete and application-neutral', async () => {
   assert.match(css, /\.pwf-overlay/);
   assert.match(css, /\.pwf-markdown/);
   assert.match(css, /\.pwf-settings-layout/);
+  assert.match(css, /\.pwf-scroll-rail__thumb/);
   assert.match(javascript, /export function initPwf/);
+  assert.match(javascript, /export \{ initScrollRails \}/);
   assert.match(css, new RegExp(`Pangom Web Framework v${packageInfo.version.replaceAll('.', '\\.')}`));
   assert.match(javascript, new RegExp(`PWF_VERSION = '${packageInfo.version.replaceAll('.', '\\.')}'`));
   assert.doesNotMatch(css + javascript, /MONITOR_|ona-/i);
@@ -32,12 +34,37 @@ test('shell reference keeps navigation usable as complete page links', async () 
   assert.match(settings, /id="privacy"/);
   assert.match(settings, /data-shell-color-scheme/);
   const documentPage = await read('../examples/shell/document.html');
+  const components = await read('../examples/shell/components.html');
   assert.match(documentPage, /data-pwf-markdown-viewer/);
   assert.match(documentPage, /data-pwf-overlay-placement="search"/);
   assert.match(documentPage, /data-pwf-overlay-placement="top-end"/);
   assert.match(home, /data-pwf-overlay-placement="bottom"/);
-  assert.match(home, /href="\.\/document\.html\?doc=foundation"/);
+  assert.match(home, /href="\.\/components\.html"/);
+  assert.match(components, /id="buttons"/);
+  assert.match(components, /id="forms"/);
+  assert.match(components, /id="dialogs"/);
+  assert.match(components, /id="tabs"/);
+  assert.match(components, /id="data"/);
+  assert.match(components, /data-shell-layout/);
+  assert.match(components, /data-pwf-scroll-rail/);
+  assert.match(documentPage, /data-pwf-dialog-select/);
+  assert.match(documentPage, /doc=scroll-rail/);
   assert.doesNotMatch(home, /href="\.\.\/\.\.\/docs\/.+\.md"/);
+});
+
+test('search and custom scroll rail implement the usability contract', async () => {
+  const overlays = await read('../src/shell/overlays.css');
+  const rail = await read('../src/js/scroll-rail.js');
+  const dialog = await read('../src/js/dialog.js');
+  assert.match(overlays, /data-pwf-overlay-placement="search"\]::backdrop[\s\S]+background: transparent/);
+  assert.match(dialog, /data-pwf-dialog-select/);
+  assert.match(dialog, /querySelector\('\[autofocus\], \[data-pwf-dialog-focus\]'\)/);
+  assert.match(rail, /pointerdown/);
+  assert.match(rail, /wheel/);
+  assert.match(rail, /ArrowLeft/);
+  assert.match(rail, /ResizeObserver/);
+  assert.match(rail, /data-pwf-scroll-ready/);
+  assert.doesNotMatch(rail, /localStorage|sessionStorage|document\.cookie/);
 });
 
 test('Markdown content module is dependency-free and avoids HTML injection', async () => {
@@ -48,6 +75,8 @@ test('Markdown content module is dependency-free and avoids HTML injection', asy
   assert.match(built, /export function initMarkdownViewers/);
   assert.doesNotMatch(source, /innerHTML|insertAdjacentHTML|outerHTML/);
   assert.match(source, /textContent/);
+  assert.match(source, /a-z0-9\+\.\-/);
+  assert.match(source, /itemLines\.join\(' '\)/);
 });
 
 test('themes remain outside the core bundle', async () => {

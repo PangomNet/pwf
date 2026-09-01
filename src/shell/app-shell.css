@@ -159,6 +159,8 @@
   stroke-linejoin: round;
 }
 
+.pwf-icon--filled { fill: currentColor; stroke: none; }
+
 .pwf-app__mobile-pages {
   position: relative;
   min-width: 0;
@@ -289,6 +291,22 @@
   width: min(100%, calc(var(--pwf-layout-normal) + 4rem));
   margin-inline: auto;
   padding: 2rem;
+}
+
+.pwf-app[data-pwf-layout-mode="wide"] .pwf-app__content {
+  width: 100%;
+  max-width: none;
+}
+
+.pwf-app[data-pwf-layout-mode="fluid"] .pwf-app__stage {
+  width: 100%;
+  max-width: none;
+  border-inline: 0;
+}
+
+.pwf-app[data-pwf-layout-mode="fluid"] .pwf-app__content {
+  width: 100%;
+  max-width: none;
 }
 
 .pwf-app__framework-divider {

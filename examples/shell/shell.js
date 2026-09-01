@@ -7,6 +7,7 @@ document.querySelectorAll('[data-pwf-version]').forEach((output) => {
 });
 
 const root = document.documentElement;
+const app = document.querySelector('.pwf-app');
 const preferences = {
   colorScheme: root.dataset.pwfColorScheme || 'auto',
   contrast: root.dataset.pwfContrast || 'auto',
@@ -65,6 +66,14 @@ document.querySelectorAll('[data-shell-motion]').forEach((control) => {
     document.querySelectorAll('[data-shell-motion]').forEach((item) => {
       if (item !== event.target) item.checked = event.target.checked;
     });
+  });
+});
+
+document.querySelectorAll('[data-shell-layout]').forEach((control) => {
+  control.value = app?.dataset.pwfLayoutMode || 'normal';
+  control.addEventListener('change', (event) => {
+    if (app) app.dataset.pwfLayoutMode = event.target.value;
+    syncControls('[data-shell-layout]', event.target.value, event.target);
   });
 });
 

@@ -47,7 +47,8 @@ transport without changing the renderer.
 ## Supported source
 
 - ATX headings (`#` through `######`) with stable generated IDs;
-- paragraphs, unordered and ordered lists, block quotes, and horizontal rules;
+- paragraphs, unordered and ordered lists with indented continuation lines,
+  block quotes, and horizontal rules;
 - fenced code blocks and inline code;
 - pipe tables;
 - links, strong text, and emphasis.
@@ -69,3 +70,8 @@ page's `noscript` fallback also exposes the original file.
 The module dispatches `pwf:markdown-ready` or `pwf:markdown-error` from the viewer
 after an attempt. Error details stay on the event and are not inserted into page
 content.
+
+Relative Markdown links, root-relative application links, fragments, HTTP(S),
+and mail links may pass through the injected resolver. Protocol-relative links
+and every other scheme, including executable or local-file schemes, are reduced
+to `#` before resolution.

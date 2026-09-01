@@ -26,12 +26,15 @@ and build/test output is reproducible.
 - Separate settings page and first compact quick-settings overlay.
 - Monitor-style search and launcher overlays with ordinary page links.
 - First safe Markdown content module and documentation route inside the shell.
+- Unified PWF Showcase with live component previews, code recipes, three shell
+  widths, immediate search focus, and accessible horizontal scroll rails.
 - App launcher persistence with favorites, history, and accessible drag-and-drop.
 - Local profile/nickname adapter and reserved multi-user slots.
 - Navigation adapter with complete page loads as baseline and optional dynamic
   loading as progressive enhancement.
-- Expand the first PWF-powered documentation shell into a searchable presentation
-  and wiki site using the same contracts delivered to applications.
+- Expand the PWF-powered showcase with a generated catalog index, print views,
+  deeper search, optional progressive transitions, and hosted presentation/wiki
+  routes using the same contracts delivered to applications.
 - ONA adapter introduced alongside existing ONA behavior; no source removal yet.
 
 Exit: ONA can opt into the shell behind an integration switch and fall back to

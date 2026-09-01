@@ -12,6 +12,10 @@ const documents = {
   themes: { title: 'Themes erstellen', section: 'Design', source: '../../docs/themes.md' },
   shell: { title: 'Application Shell', section: 'Komponenten', source: '../../docs/components/shell.md' },
   foundation: { title: 'Foundation-Komponenten', section: 'Komponenten', source: '../../docs/components/foundation.md' },
+  markdown: { title: 'Markdown-Viewer', section: 'Komponenten', source: '../../docs/components/markdown-viewer.md' },
+  'scroll-rail': { title: 'Scroll-Leiste', section: 'Komponenten', source: '../../docs/components/scroll-rail.md' },
+  markdown: { title: 'Markdown-Viewer', section: 'Komponenten', source: '../../docs/components/markdown-viewer.md' },
+  'scroll-rail': { title: 'Scroll-Leiste', section: 'Komponenten', source: '../../docs/components/scroll-rail.md' },
   versioning: { title: 'Versionierung', section: 'Entwicklung', source: '../../docs/versioning.md' },
   documentation: { title: 'Dokumentationssystem', section: 'Entwicklung', source: '../../docs/documentation-system.md' }
 };

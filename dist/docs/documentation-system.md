@@ -36,9 +36,9 @@ These types may link to each other but should not be mixed into one very long
 page. A new reader gets a guided route; an experienced reader can jump directly
 to reference.
 
-## Documentation site as reference application
+## Documentation showcase as reference application
 
-The future site uses only public PWF capabilities. Its shell demonstrates header,
+The executable site uses only public PWF capabilities. Its shell demonstrates header,
 page tabs, breadcrumbs, launcher, search, layouts, settings, themes, and offline
 behavior. Presentation pages use the same content and component contracts rather
 than a separate slide-only design system.
@@ -48,7 +48,7 @@ may enhance transitions, but every page has a stable URL, server-rendered main
 content, correct title, usable browser history, printable output, and recovery by
 reload.
 
-The site will generate navigation and reference indexes from the component
+Later site builds will generate navigation and reference indexes from the component
 catalog and JSON Schemas. Authored prose remains the source for explanations and
 examples; generated tables do not replace human-readable behavior descriptions.
 

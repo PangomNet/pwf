@@ -1,4 +1,4 @@
-/*! Pangom Web Framework v0.1.0-alpha.3 | MIT */
+/*! Pangom Web Framework v0.1.0-alpha.4 | MIT */
 /* Build manifest. scripts/build.mjs resolves these imports in order. */
 
 /* src/core/tokens.css */
@@ -551,6 +551,50 @@ progress {
 }
 
 
+/* src/components/scroll-rail.css */
+.pwf-scroll-rail { min-width: 0; }
+
+.pwf-scroll-rail__viewport {
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.pwf-scroll-rail[data-pwf-scroll-ready] .pwf-scroll-rail__viewport {
+  scrollbar-width: none;
+}
+
+.pwf-scroll-rail[data-pwf-scroll-ready] .pwf-scroll-rail__viewport::-webkit-scrollbar { display: none; }
+
+.pwf-scroll-rail__track {
+  position: relative;
+  height: 0.7rem;
+  margin: 0.25rem 0.5rem 0;
+  border-radius: 9999px;
+  background: color-mix(in srgb, var(--pwf-color-text) 7%, transparent);
+  touch-action: none;
+}
+
+.pwf-scroll-rail__track[hidden] { display: none; }
+
+.pwf-scroll-rail__thumb {
+  position: absolute;
+  inset-block: 0.12rem;
+  inset-inline-start: 0;
+  min-width: 2.5rem;
+  border: 0;
+  border-radius: 9999px;
+  padding: 0;
+  background: color-mix(in srgb, var(--pwf-color-text-muted) 68%, transparent);
+  cursor: grab;
+  touch-action: none;
+  translate: var(--pwf-scroll-thumb-x, 0) 0;
+}
+
+.pwf-scroll-rail__thumb:hover { background: var(--pwf-route-accent, var(--pwf-color-accent)); }
+.pwf-scroll-rail__thumb:active { cursor: grabbing; }
+.pwf-scroll-rail__thumb:focus-visible { outline: 2px solid var(--pwf-color-focus); outline-offset: 2px; }
+
+
 /* src/shell/app-shell.css */
 .pwf-app {
   --pwf-route-accent: var(--pwf-color-accent);
@@ -713,6 +757,8 @@ progress {
   stroke-linejoin: round;
 }
 
+.pwf-icon--filled { fill: currentColor; stroke: none; }
+
 .pwf-app__mobile-pages {
   position: relative;
   min-width: 0;
@@ -843,6 +889,22 @@ progress {
   width: min(100%, calc(var(--pwf-layout-normal) + 4rem));
   margin-inline: auto;
   padding: 2rem;
+}
+
+.pwf-app[data-pwf-layout-mode="wide"] .pwf-app__content {
+  width: 100%;
+  max-width: none;
+}
+
+.pwf-app[data-pwf-layout-mode="fluid"] .pwf-app__stage {
+  width: 100%;
+  max-width: none;
+  border-inline: 0;
+}
+
+.pwf-app[data-pwf-layout-mode="fluid"] .pwf-app__content {
+  width: 100%;
+  max-width: none;
 }
 
 .pwf-app__framework-divider {
@@ -1248,6 +1310,12 @@ progress {
   -webkit-backdrop-filter: blur(0.2rem);
 }
 
+.pwf-overlay[data-pwf-overlay-placement="search"]::backdrop {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
 .pwf-overlay[open] {
   display: flex;
   flex-direction: column;
@@ -1409,9 +1477,13 @@ html:has(.pwf-overlay[open]) { overflow: hidden; overscroll-behavior: none; }
   gap: 1.5rem;
 }
 
-.pwf-document-nav {
+.pwf-document-nav-wrap {
   position: sticky;
   inset-block-start: 6.5rem;
+  min-width: 0;
+}
+
+.pwf-document-nav {
   display: grid;
   gap: 0.25rem;
   border: 1px solid var(--pwf-color-border);
@@ -1459,7 +1531,8 @@ html:has(.pwf-overlay[open]) { overflow: hidden; overscroll-behavior: none; }
 
 @media (max-width: 56rem) {
   .pwf-document-layout { grid-template-columns: 1fr; }
-  .pwf-document-nav { position: static; grid-auto-flow: column; grid-auto-columns: max-content; overflow-x: auto; }
+  .pwf-document-nav-wrap { position: static; }
+  .pwf-document-nav { width: max-content; min-width: 100%; grid-auto-flow: column; grid-auto-columns: max-content; }
 }
 
 @media (max-width: 40rem) {

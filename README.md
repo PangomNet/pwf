@@ -19,7 +19,9 @@ The repository is at an early foundation stage. The first slice provides:
   route accents, content cards, Monitor-style search, launcher and quick-settings
   overlays, footer, and a full settings-page pattern;
 - a dependency-free safe Markdown viewer that keeps documentation subpages in
-  the complete application design.
+  the complete application design;
+- a unified PWF Showcase with live component previews, code recipes, themed
+  horizontal scroll rails, immediate search focus, and normal/wide/fluid views.
 
 ## Quick start
 
@@ -30,12 +32,12 @@ npm run check
 ```
 
 Serve the repository with any static web server and open
-`examples/foundation/index.html`. The example deliberately uses ordinary links
-and semantic HTML; JavaScript enhances dialogs, tabs, preferences, and toasts.
-The more application-like `examples/shell/index.html` demonstrates the emerging
-PWF shell. It links to the complete `examples/shell/settings.html` route and to
-`examples/shell/document.html`, which renders allowlisted Markdown sources
-inside the same design.
+`examples/shell/index.html`. This is the canonical PWF Showcase and links to
+live components, the complete settings route, and allowlisted Markdown sources
+inside the same design. `examples/foundation/index.html` remains the deliberately
+small shell-independent integration example. Both use ordinary links and
+semantic HTML; JavaScript only enhances dialogs, tabs, preferences, rails, and
+toasts.
 
 For Tailwind projects, add `tailwind.preset.cjs` to the application's presets
 and include `src/tailwind.css` in its Tailwind input. PWF itself does not vendor

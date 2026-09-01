@@ -13,7 +13,12 @@ export function openDialog(dialog, trigger = null) {
     dialog.setAttribute('open', '');
     dialog.setAttribute('aria-modal', 'true');
   }
-  dialog.querySelector('[autofocus], button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')?.focus();
+  const focusTarget = dialog.querySelector('[autofocus], [data-pwf-dialog-focus]') ||
+    dialog.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+  focusTarget?.focus();
+  if (focusTarget?.matches?.('[data-pwf-dialog-select]') && typeof focusTarget.select === 'function') {
+    focusTarget.select();
+  }
   return true;
 }
 
