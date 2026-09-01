@@ -18,6 +18,8 @@ site doubles as a reference implementation and a continuous integration target.
   recipes and behavior notes.
 - [Application shell](components/shell.md) documents the monitor-inspired but
   product-neutral frame, navigation, content patterns, and settings layout.
+- [Markdown viewer](components/markdown-viewer.md) documents the first content
+  module and its safe in-shell rendering contract.
 - [PWF Standard design language](design-standard.md) records the exact shell
   geometry, surface hierarchy, route accents, typography boundary, and responsive behavior.
 - [Theme authoring](themes.md) explains removable token-only themes.

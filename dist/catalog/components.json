@@ -108,6 +108,24 @@
       "javascript": null,
       "semantics": "Expose large settings groups as linkable sections on a complete page with native form controls.",
       "documentation": "docs/components/shell.md#settings-page"
+    },
+    {
+      "id": "overlay",
+      "status": "experimental",
+      "css": ["pwf-overlay", "pwf-overlay__header", "pwf-overlay__body", "pwf-search-field", "pwf-search-result", "pwf-launcher-grid", "pwf-quick-settings"],
+      "javascript": "initDialogs",
+      "semantics": "Use a native named dialog for transient tools; keep every navigational result as an ordinary anchor and link quick settings to the complete settings page.",
+      "documentation": "docs/components/shell.md#overlays",
+      "enhancement": "data-pwf-overlay-placement selects search, top-end launcher, or bottom quick-settings geometry without changing dialog behavior."
+    },
+    {
+      "id": "markdown-viewer",
+      "status": "experimental",
+      "css": ["pwf-document-layout", "pwf-document-nav", "pwf-markdown"],
+      "javascript": "initMarkdownViewers",
+      "semantics": "Render allowlisted Markdown into an article inside the application shell and retain a direct source link as the failure fallback.",
+      "documentation": "docs/components/markdown-viewer.md#markdown-viewer",
+      "enhancement": "The safe renderer creates DOM nodes without innerHTML and emits pwf:markdown-ready or pwf:markdown-error."
     }
   ]
 }

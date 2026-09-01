@@ -32,6 +32,17 @@ export function closeDialog(dialog, returnValue = '') {
 /** Add delegated open/close behavior for data-pwf-dialog-* controls. */
 export function initDialogs(root = document) {
   const onClick = (event) => {
+    const backdropDialog = event.target.closest?.('dialog[data-pwf-dialog-backdrop-close][open]');
+    if (backdropDialog && event.target === backdropDialog) {
+      const bounds = backdropDialog.getBoundingClientRect();
+      const outside = event.clientX < bounds.left || event.clientX > bounds.right ||
+        event.clientY < bounds.top || event.clientY > bounds.bottom;
+      if (outside) {
+        closeDialog(backdropDialog);
+        return;
+      }
+    }
+
     const openTrigger = event.target.closest?.('[data-pwf-dialog-open]');
     if (openTrigger) {
       event.preventDefault();

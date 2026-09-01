@@ -12,6 +12,8 @@ test('foundation build is complete and application-neutral', async () => {
   assert.match(css, /data-pwf-layout="fluid"/);
   assert.match(css, /\.pwf-app__header/);
   assert.match(css, /\.pwf-app__framework-divider/);
+  assert.match(css, /\.pwf-overlay/);
+  assert.match(css, /\.pwf-markdown/);
   assert.match(css, /\.pwf-settings-layout/);
   assert.match(javascript, /export function initPwf/);
   assert.match(css, new RegExp(`Pangom Web Framework v${packageInfo.version.replaceAll('.', '\\.')}`));
@@ -29,6 +31,23 @@ test('shell reference keeps navigation usable as complete page links', async () 
   assert.match(settings, /id="appearance"/);
   assert.match(settings, /id="privacy"/);
   assert.match(settings, /data-shell-color-scheme/);
+  const documentPage = await read('../examples/shell/document.html');
+  assert.match(documentPage, /data-pwf-markdown-viewer/);
+  assert.match(documentPage, /data-pwf-overlay-placement="search"/);
+  assert.match(documentPage, /data-pwf-overlay-placement="top-end"/);
+  assert.match(home, /data-pwf-overlay-placement="bottom"/);
+  assert.match(home, /href="\.\/document\.html\?doc=foundation"/);
+  assert.doesNotMatch(home, /href="\.\.\/\.\.\/docs\/.+\.md"/);
+});
+
+test('Markdown content module is dependency-free and avoids HTML injection', async () => {
+  const source = await read('../src/js/markdown-viewer.js');
+  const built = await read('../dist/markdown-viewer.js');
+  assert.match(source, /export function renderMarkdown/);
+  assert.match(source, /export async function loadMarkdownViewer/);
+  assert.match(built, /export function initMarkdownViewers/);
+  assert.doesNotMatch(source, /innerHTML|insertAdjacentHTML|outerHTML/);
+  assert.match(source, /textContent/);
 });
 
 test('themes remain outside the core bundle', async () => {

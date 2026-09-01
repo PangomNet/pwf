@@ -74,6 +74,39 @@ ordinary links and may horizontally scroll on small screens.
 Buttons in `.pwf-app__actions` are reserved for actions such as opening search or
 the app launcher. They must not replace addressable navigation destinations.
 
+The mobile page selector uses native `details` and a fixed dropdown. Its flexible
+current-page label truncates before the brand, search, or launcher can be pushed
+out of the header. The chevron rotates only as an additional open-state cue.
+
+## Overlays
+
+`.pwf-overlay` is the shared modal surface for Monitor-style transient tools. It
+uses a native `dialog`, inherits theme tokens, traps focus through the platform,
+and closes through `data-pwf-dialog-close`, Escape, or the optional
+`data-pwf-dialog-backdrop-close` contract.
+
+`data-pwf-overlay-placement` provides three standard geometries:
+
+- `search`: a 34rem search surface aligned below the header;
+- `top-end`: a 28rem app launcher aligned to the upper end edge;
+- `bottom`: a 28rem centered bottom sheet for quick settings.
+
+Search results and launcher cards remain ordinary links. Quick settings contain
+only frequent theme, scheme, scale, contrast, or motion controls and end with a
+link to the complete settings page. Applications may choose a normal page route
+instead of an overlay without changing the underlying destination contract.
+
+## Content subpages
+
+Application subpages remain inside the complete shell. A route changes the active
+tab, breadcrumb, context links, route accent, and main content; it does not drop
+the shared header or footer. This matches a server-rendered WordPress theme where
+templates place each page body inside one common frame.
+
+The Markdown viewer demonstrates this rule for documentation. Its URL loads a
+complete page first, then the content module renders an allowlisted source inside
+`.pwf-app__content`. See `docs/components/markdown-viewer.md`.
+
 ## Page hero
 
 `.pwf-page-hero` holds the page identity and an optional status or action area.

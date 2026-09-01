@@ -14,9 +14,12 @@ The repository is at an early foundation stage. The first slice provides:
 - the removable `PWF Standard` theme, which faithfully carries the ONA Monitor
   interface language without ONA branding or application data, plus alternative
   themes and a JSON Schema contract;
-- browser-native ES modules, an unminified CSS build, tests, and an example.
+- browser-native ES modules, an unminified CSS build, tests, and examples;
 - an initial application shell with responsive page navigation, breadcrumbs,
-  route accents, content cards, footer, and a full settings-page pattern.
+  route accents, content cards, Monitor-style search, launcher and quick-settings
+  overlays, footer, and a full settings-page pattern;
+- a dependency-free safe Markdown viewer that keeps documentation subpages in
+  the complete application design.
 
 ## Quick start
 
@@ -30,8 +33,9 @@ Serve the repository with any static web server and open
 `examples/foundation/index.html`. The example deliberately uses ordinary links
 and semantic HTML; JavaScript enhances dialogs, tabs, preferences, and toasts.
 The more application-like `examples/shell/index.html` demonstrates the emerging
-PWF shell and links to `examples/shell/settings.html` through a complete page
-load.
+PWF shell. It links to the complete `examples/shell/settings.html` route and to
+`examples/shell/document.html`, which renders allowlisted Markdown sources
+inside the same design.
 
 For Tailwind projects, add `tailwind.preset.cjs` to the application's presets
 and include `src/tailwind.css` in its Tailwind input. PWF itself does not vendor
