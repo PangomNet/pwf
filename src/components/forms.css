@@ -1,0 +1,54 @@
+.pwf-field {
+  display: grid;
+  gap: var(--pwf-space-2);
+}
+
+.pwf-label {
+  color: var(--pwf-color-text);
+  font-weight: 700;
+}
+
+.pwf-hint,
+.pwf-error {
+  color: var(--pwf-color-text-muted);
+  font-size: 0.875rem;
+}
+
+.pwf-error {
+  color: var(--pwf-color-danger);
+}
+
+.pwf-input,
+.pwf-select,
+.pwf-textarea {
+  width: 100%;
+  min-height: 2.75rem;
+  border: 1px solid var(--pwf-color-border);
+  border-radius: var(--pwf-radius-md);
+  padding: 0.65rem 0.8rem;
+  background: var(--pwf-color-surface-solid);
+  color: var(--pwf-color-text);
+}
+
+.pwf-textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+.pwf-input[aria-invalid="true"],
+.pwf-select[aria-invalid="true"],
+.pwf-textarea[aria-invalid="true"] {
+  border-color: var(--pwf-color-danger);
+}
+
+.pwf-choice {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--pwf-space-2);
+}
+
+.pwf-choice input,
+.pwf-range,
+progress {
+  accent-color: var(--pwf-color-accent);
+}

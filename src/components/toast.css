@@ -1,0 +1,37 @@
+.pwf-toast-region {
+  position: fixed;
+  z-index: 9000;
+  inset-block-end: max(var(--pwf-space-4), env(safe-area-inset-bottom));
+  inset-inline-end: max(var(--pwf-space-4), env(safe-area-inset-right));
+  display: grid;
+  width: min(24rem, calc(100% - 2rem));
+  gap: var(--pwf-space-2);
+  pointer-events: none;
+}
+
+.pwf-toast {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: var(--pwf-space-3);
+  border: 1px solid var(--pwf-color-border);
+  border-inline-start: 0.25rem solid var(--pwf-toast-accent, var(--pwf-color-accent));
+  border-radius: var(--pwf-radius-md);
+  padding: var(--pwf-space-3) var(--pwf-space-4);
+  background: var(--pwf-color-surface-solid);
+  color: var(--pwf-color-text);
+  box-shadow: var(--pwf-shadow-md);
+  pointer-events: auto;
+}
+
+.pwf-toast[data-pwf-tone="danger"] {
+  --pwf-toast-accent: var(--pwf-color-danger);
+}
+
+.pwf-toast__close {
+  border: 0;
+  padding: 0.15rem 0.35rem;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}

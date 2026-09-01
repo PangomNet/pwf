@@ -1,0 +1,38 @@
+.pwf-dialog {
+  width: min(36rem, calc(100% - 2rem));
+  max-height: calc(100dvh - 2rem);
+  overflow: auto;
+  border: 1px solid var(--pwf-color-border);
+  border-radius: var(--pwf-radius-lg);
+  padding: 0;
+  background: var(--pwf-color-surface-solid);
+  color: var(--pwf-color-text);
+  box-shadow: var(--pwf-shadow-md);
+}
+
+.pwf-dialog::backdrop {
+  background: var(--pwf-color-backdrop);
+  backdrop-filter: blur(4px);
+}
+
+.pwf-dialog__body {
+  padding: var(--pwf-space-5);
+}
+
+.pwf-dialog__footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--pwf-space-2);
+  border-top: 1px solid var(--pwf-color-border);
+  padding: var(--pwf-space-4) var(--pwf-space-5);
+}
+
+.pwf-dialog[open] {
+  animation: pwf-dialog-enter var(--pwf-duration-normal) var(--pwf-ease-standard);
+}
+
+@keyframes pwf-dialog-enter {
+  from { opacity: 0; transform: translateY(0.5rem) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}

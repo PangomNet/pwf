@@ -1,0 +1,78 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  font-family: var(--pwf-font-sans);
+  font-size: calc(var(--pwf-font-size-base) * var(--pwf-ui-scale));
+  line-height: var(--pwf-line-height);
+  background: var(--pwf-color-canvas);
+  color: var(--pwf-color-text);
+  text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, var(--pwf-color-canvas-accent), transparent 38rem),
+    var(--pwf-color-canvas);
+  color: var(--pwf-color-text);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: var(--pwf-color-accent);
+  text-underline-offset: 0.18em;
+}
+
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 0.1875rem solid var(--pwf-color-focus);
+  outline-offset: 0.1875rem;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--pwf-color-accent) 30%, transparent);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.pwf-visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.pwf-skip-link {
+  position: fixed;
+  inset-block-start: var(--pwf-space-3);
+  inset-inline-start: var(--pwf-space-3);
+  z-index: 10000;
+  translate: 0 -200%;
+  border-radius: var(--pwf-radius-sm);
+  padding: var(--pwf-space-2) var(--pwf-space-4);
+  background: var(--pwf-color-surface-solid);
+  color: var(--pwf-color-text);
+  box-shadow: var(--pwf-shadow-md);
+}
+
+.pwf-skip-link:focus {
+  translate: 0;
+}

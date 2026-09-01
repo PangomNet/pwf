@@ -1,0 +1,50 @@
+.pwf-button {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  gap: var(--pwf-space-2);
+  border: 1px solid transparent;
+  border-radius: var(--pwf-radius-md);
+  padding: var(--pwf-space-2) var(--pwf-space-4);
+  background: var(--pwf-color-accent);
+  color: var(--pwf-color-on-accent);
+  font-weight: 750;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--pwf-duration-fast) var(--pwf-ease-standard), transform var(--pwf-duration-fast) var(--pwf-ease-standard);
+}
+
+.pwf-button:hover {
+  background: var(--pwf-color-accent-hover);
+}
+
+.pwf-button:active {
+  transform: translateY(1px);
+}
+
+.pwf-button--secondary {
+  border-color: var(--pwf-color-border);
+  background: var(--pwf-color-surface-solid);
+  color: var(--pwf-color-text);
+}
+
+.pwf-button--secondary:hover {
+  background: var(--pwf-color-surface-muted);
+}
+
+.pwf-button--quiet {
+  background: transparent;
+  color: var(--pwf-color-accent);
+}
+
+.pwf-button--quiet:hover {
+  background: color-mix(in srgb, var(--pwf-color-accent) 12%, transparent);
+}
+
+.pwf-button:disabled,
+.pwf-button[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}

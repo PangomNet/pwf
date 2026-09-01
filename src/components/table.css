@@ -1,0 +1,29 @@
+.pwf-table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--pwf-color-border);
+  border-radius: var(--pwf-radius-md);
+}
+
+.pwf-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--pwf-color-surface-solid);
+}
+
+.pwf-table th,
+.pwf-table td {
+  border-bottom: 1px solid var(--pwf-color-border);
+  padding: var(--pwf-space-3) var(--pwf-space-4);
+  text-align: start;
+  vertical-align: top;
+}
+
+.pwf-table th {
+  background: var(--pwf-color-surface-muted);
+  font-weight: 750;
+}
+
+.pwf-table tr:last-child td {
+  border-bottom: 0;
+}

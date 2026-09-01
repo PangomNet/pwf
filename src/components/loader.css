@@ -1,0 +1,14 @@
+.pwf-loader {
+  display: inline-grid;
+  place-items: center;
+  width: var(--pwf-loader-size, 2.5rem);
+  height: var(--pwf-loader-size, 2.5rem);
+  border: 0.1875rem solid color-mix(in srgb, var(--pwf-color-text) 16%, transparent);
+  border-top-color: var(--pwf-color-accent);
+  border-radius: var(--pwf-radius-pill);
+  animation: pwf-loader-spin 850ms linear infinite;
+}
+
+@keyframes pwf-loader-spin {
+  to { transform: rotate(1turn); }
+}

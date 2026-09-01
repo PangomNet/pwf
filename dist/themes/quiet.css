@@ -1,0 +1,33 @@
+[data-pwf-theme="quiet"] {
+  --pwf-color-accent: #315c78;
+  --pwf-color-accent-hover: #24485f;
+  --pwf-color-canvas: #f5f4f0;
+  --pwf-color-canvas-accent: rgba(255, 255, 255, 0.35);
+  --pwf-color-surface: rgba(255, 255, 255, 0.9);
+  --pwf-radius-sm: 0.3rem;
+  --pwf-radius-md: 0.5rem;
+  --pwf-radius-lg: 0.75rem;
+  --pwf-blur-surface: 8px;
+}
+
+[data-pwf-theme="quiet"][data-pwf-color-scheme="dark"],
+.dark[data-pwf-theme="quiet"] {
+  --pwf-color-accent: #8dc5e8;
+  --pwf-color-accent-hover: #b3daf2;
+  --pwf-color-on-accent: #102b3c;
+  --pwf-color-canvas: #101416;
+  --pwf-color-canvas-accent: rgba(255, 255, 255, 0.03);
+  --pwf-color-surface: rgba(25, 31, 34, 0.94);
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-pwf-theme="quiet"]:not([data-pwf-color-scheme]),
+  [data-pwf-theme="quiet"][data-pwf-color-scheme="auto"] {
+    --pwf-color-accent: #8dc5e8;
+    --pwf-color-accent-hover: #b3daf2;
+    --pwf-color-on-accent: #102b3c;
+    --pwf-color-canvas: #101416;
+    --pwf-color-canvas-accent: rgba(255, 255, 255, 0.03);
+    --pwf-color-surface: rgba(25, 31, 34, 0.94);
+  }
+}

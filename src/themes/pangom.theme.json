@@ -1,0 +1,12 @@
+{
+  "$schema": "../../schemas/theme.schema.json",
+  "schemaVersion": 1,
+  "id": "pangom",
+  "name": "Pangom",
+  "description": "A vivid, glassy theme inspired by the PanPlay visual language.",
+  "version": "0.1.0-alpha.1",
+  "pwfVersion": ">=0.1.0-alpha.1 <0.2.0",
+  "license": "MIT",
+  "styles": ["pangom.css"],
+  "modes": ["light", "dark"]
+}

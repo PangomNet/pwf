@@ -1,0 +1,34 @@
+[data-pwf-contrast="more"] {
+  --pwf-color-border: currentColor;
+  --pwf-color-text-muted: var(--pwf-color-text);
+  --pwf-shadow-sm: 0 0 0 0.125rem currentColor;
+}
+
+@media (prefers-contrast: more) {
+  :root:not([data-pwf-contrast]),
+  :root[data-pwf-contrast="auto"] {
+    --pwf-color-border: currentColor;
+    --pwf-color-text-muted: var(--pwf-color-text);
+    --pwf-shadow-sm: 0 0 0 0.125rem currentColor;
+  }
+}
+
+[data-pwf-motion="reduce"] *,
+[data-pwf-motion="reduce"] *::before,
+[data-pwf-motion="reduce"] *::after {
+  scroll-behavior: auto !important;
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

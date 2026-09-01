@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pangom.dev/pwf/schemas/component-catalog.schema.json",
+  "title": "PWF component catalog",
+  "type": "object",
+  "required": ["schemaVersion", "components"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "status", "css", "javascript", "semantics", "documentation"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+          "status": { "enum": ["experimental", "stable", "deprecated"] },
+          "css": { "type": "array", "items": { "type": "string" } },
+          "javascript": { "type": ["string", "null"] },
+          "semantics": { "type": "string", "minLength": 1 },
+          "documentation": { "type": "string", "pattern": "^docs/[a-zA-Z0-9._/#-]+$" },
+          "enhancement": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

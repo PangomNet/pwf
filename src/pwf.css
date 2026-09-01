@@ -1,0 +1,13 @@
+/* Build manifest. scripts/build.mjs resolves these imports in order. */
+@import "./core/tokens.css";
+@import "./core/base.css";
+@import "./core/layout.css";
+@import "./core/preferences.css";
+@import "./components/panel.css";
+@import "./components/button.css";
+@import "./components/forms.css";
+@import "./components/dialog.css";
+@import "./components/tabs.css";
+@import "./components/table.css";
+@import "./components/loader.css";
+@import "./components/toast.css";

@@ -1,0 +1,73 @@
+{
+  "$schema": "../schemas/component-catalog.schema.json",
+  "schemaVersion": 1,
+  "components": [
+    {
+      "id": "button",
+      "status": "experimental",
+      "css": ["pwf-button", "pwf-button--secondary", "pwf-button--quiet"],
+      "javascript": null,
+      "semantics": "Use button for actions and a for navigation.",
+      "documentation": "docs/components/foundation.md#button"
+    },
+    {
+      "id": "panel",
+      "status": "experimental",
+      "css": ["pwf-panel", "pwf-panel--solid", "pwf-panel__title"],
+      "javascript": null,
+      "semantics": "Use the landmark or sectioning element appropriate to the content.",
+      "documentation": "docs/components/foundation.md#panel"
+    },
+    {
+      "id": "form-field",
+      "status": "experimental",
+      "css": ["pwf-field", "pwf-label", "pwf-input", "pwf-select", "pwf-textarea", "pwf-choice"],
+      "javascript": null,
+      "semantics": "Associate every control with a label and hints or errors through aria-describedby.",
+      "documentation": "docs/components/foundation.md#form-field"
+    },
+    {
+      "id": "dialog",
+      "status": "experimental",
+      "css": ["pwf-dialog", "pwf-dialog__body", "pwf-dialog__footer"],
+      "javascript": "initDialogs",
+      "semantics": "Prefer the native dialog element with an accessible name.",
+      "documentation": "docs/components/foundation.md#dialog",
+      "enhancement": "data-pwf-dialog-open and data-pwf-dialog-close connect controls without inline script."
+    },
+    {
+      "id": "tabs",
+      "status": "experimental",
+      "css": ["pwf-tabs__list", "pwf-tabs__tab", "pwf-tabs__panel"],
+      "javascript": "initTabs",
+      "semantics": "Use tablist, tab, and tabpanel roles with aria-controls and labelled panels.",
+      "documentation": "docs/components/foundation.md#tabs",
+      "enhancement": "Arrow keys, Home, and End select tabs. Without JavaScript, panels remain visible."
+    },
+    {
+      "id": "table",
+      "status": "experimental",
+      "css": ["pwf-table-scroll", "pwf-table"],
+      "javascript": null,
+      "semantics": "Use caption and scoped header cells; the wrapper only provides horizontal overflow.",
+      "documentation": "docs/components/foundation.md#table"
+    },
+    {
+      "id": "loader",
+      "status": "experimental",
+      "css": ["pwf-loader"],
+      "javascript": null,
+      "semantics": "Place the visual loader inside an element with role=status and meaningful text.",
+      "documentation": "docs/components/foundation.md#loader"
+    },
+    {
+      "id": "toast",
+      "status": "experimental",
+      "css": ["pwf-toast-region", "pwf-toast", "pwf-toast__close"],
+      "javascript": "showToast",
+      "semantics": "Messages use polite status announcements; danger messages use alert.",
+      "documentation": "docs/components/foundation.md#toast",
+      "enhancement": "The API inserts text with textContent and never accepts HTML."
+    }
+  ]
+}

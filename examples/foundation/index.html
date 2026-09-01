@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en" data-pwf-theme="pangom" data-pwf-color-scheme="auto" data-pwf-contrast="auto" data-pwf-motion="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PWF foundation example</title>
+  <link rel="stylesheet" href="../../dist/pwf.css">
+  <link rel="stylesheet" href="../../dist/themes/pangom.css">
+  <link rel="stylesheet" href="../../dist/themes/quiet.css">
+  <link rel="stylesheet" href="./example.css">
+</head>
+<body>
+  <a class="pwf-skip-link" href="#main">Skip to content</a>
+
+  <header class="demo-header">
+    <div class="pwf-layout pwf-layout--wide demo-header__inner">
+      <a class="demo-brand" href="./index.html">Pangom Web Framework</a>
+      <nav class="pwf-cluster" aria-label="Project">
+        <a href="../../README.md">Readme</a>
+        <a href="../../ARCHITECTURE.md">Architecture</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="pwf-layout pwf-section pwf-stack">
+    <section class="demo-heading" aria-labelledby="foundation-title">
+      <div>
+        <p>Foundation slice · PWF <span data-demo-version>development source</span></p>
+        <h1 id="foundation-title">A small, modular application baseline</h1>
+        <p class="demo-lead">This page uses ordinary links and semantic HTML. PWF enhances preferences, tabs, the native dialog, and notifications after the page loads.</p>
+      </div>
+      <button class="pwf-button" type="button" data-pwf-dialog-open="example-dialog">Open dialog</button>
+    </section>
+
+    <section class="pwf-panel pwf-stack" aria-labelledby="preferences-title">
+      <h2 class="pwf-panel__title" id="preferences-title">Live preferences</h2>
+      <div class="demo-controls">
+        <label class="pwf-field">
+          <span class="pwf-label">Theme</span>
+          <select class="pwf-select" data-demo-theme>
+            <option value="pangom">Pangom</option>
+            <option value="quiet">Quiet</option>
+          </select>
+        </label>
+        <label class="pwf-field">
+          <span class="pwf-label">Color scheme</span>
+          <select class="pwf-select" data-demo-scheme>
+            <option value="auto">Automatic</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </label>
+        <label class="pwf-field">
+          <span class="pwf-label">Layout</span>
+          <select class="pwf-select" data-demo-layout>
+            <option value="normal">Normal</option>
+            <option value="wide">Wide</option>
+            <option value="fluid">Fluid</option>
+          </select>
+        </label>
+        <label class="pwf-field">
+          <span class="pwf-label">Scale</span>
+          <input class="pwf-range" type="range" min="0.75" max="1.5" step="0.05" value="1" data-demo-scale>
+        </label>
+        <label class="pwf-choice">
+          <input type="checkbox" data-demo-contrast>
+          <span><strong>More contrast</strong><br><span class="pwf-hint">Independent of theme</span></span>
+        </label>
+        <label class="pwf-choice">
+          <input type="checkbox" data-demo-motion>
+          <span><strong>Reduce motion</strong><br><span class="pwf-hint">Stops nonessential effects</span></span>
+        </label>
+      </div>
+    </section>
+
+    <div class="pwf-grid">
+      <section class="pwf-panel pwf-stack" aria-labelledby="form-title">
+        <h2 class="pwf-panel__title" id="form-title">Form controls</h2>
+        <label class="pwf-field" for="example-name">
+          <span class="pwf-label">Display name</span>
+          <input class="pwf-input" id="example-name" aria-describedby="name-hint" autocomplete="nickname">
+          <span class="pwf-hint" id="name-hint">The framework does not store this value.</span>
+        </label>
+        <label class="pwf-choice">
+          <input type="checkbox">
+          <span>Enable optional comfort feature</span>
+        </label>
+        <div class="pwf-cluster">
+          <button class="pwf-button" type="button" data-demo-toast>Show toast</button>
+          <a class="pwf-button pwf-button--secondary" href="../../docs/themes.md">Theme guide</a>
+        </div>
+      </section>
+
+      <section class="pwf-panel pwf-stack" aria-labelledby="status-title">
+        <h2 class="pwf-panel__title" id="status-title">Status</h2>
+        <div class="demo-status" role="status">
+          <span class="pwf-loader" aria-hidden="true"></span>
+          <span>Loading a feature module…</span>
+        </div>
+        <p class="pwf-hint">Reduced-motion preferences turn the spinner into a static indicator without hiding its status text.</p>
+      </section>
+    </div>
+
+    <section class="pwf-panel" aria-labelledby="tabs-title" data-pwf-tabs>
+      <h2 class="pwf-panel__title" id="tabs-title">Progressively enhanced tabs</h2>
+      <div class="pwf-tabs__list" role="tablist" aria-label="Foundation details">
+        <button class="pwf-tabs__tab" id="tab-core" type="button" role="tab" aria-selected="true" aria-controls="panel-core">Core</button>
+        <button class="pwf-tabs__tab" id="tab-theme" type="button" role="tab" aria-selected="false" aria-controls="panel-theme">Themes</button>
+      </div>
+      <div class="pwf-tabs__panel" id="panel-core" role="tabpanel" aria-labelledby="tab-core">
+        Tokens and layouts render without JavaScript. The module only adds interaction behavior.
+      </div>
+      <div class="pwf-tabs__panel" id="panel-theme" role="tabpanel" aria-labelledby="tab-theme">
+        Both example themes are separate files. An application may ship either, both, or neither.
+      </div>
+    </section>
+
+    <section class="pwf-stack" aria-labelledby="table-title">
+      <h2 id="table-title">Module loading contract</h2>
+      <div class="pwf-table-scroll" tabindex="0" role="region" aria-label="Module loading table">
+        <table class="pwf-table">
+          <caption class="pwf-visually-hidden">Foundation modules and their loading behavior</caption>
+          <thead><tr><th scope="col">Module</th><th scope="col">Required</th><th scope="col">Side effect on import</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Core CSS</th><td>Yes</td><td>Styles semantic markup</td></tr>
+            <tr><th scope="row">Theme CSS</th><td>No</td><td>Token overrides only</td></tr>
+            <tr><th scope="row">JavaScript</th><td>No</td><td>None until initPwf()</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="pwf-dialog" id="example-dialog" aria-labelledby="dialog-title">
+    <div class="pwf-dialog__body pwf-stack">
+      <h2 class="pwf-panel__title" id="dialog-title">Native dialog</h2>
+      <p>Focus returns to the opening control when this dialog closes.</p>
+    </div>
+    <div class="pwf-dialog__footer">
+      <button class="pwf-button" type="button" data-pwf-dialog-close="confirmed">Done</button>
+    </div>
+  </dialog>
+
+  <footer class="demo-footer">
+    <div class="pwf-layout">PWF foundation example. No cookies, remote fonts, or tracking.</div>
+  </footer>
+
+  <script type="module">
+    import { PWF_VERSION, applyPreferences, initPwf, showToast } from '../../dist/pwf.js';
+
+    initPwf();
+    document.querySelector('[data-demo-version]').textContent = PWF_VERSION;
+    const root = document.documentElement;
+    const main = document.querySelector('main.pwf-layout');
+    const preferences = { colorScheme: 'auto', contrast: 'auto', motion: 'auto', scale: 1 };
+    const update = () => applyPreferences(preferences, root);
+
+    document.querySelector('[data-demo-theme]').addEventListener('change', (event) => {
+      root.dataset.pwfTheme = event.target.value;
+    });
+    document.querySelector('[data-demo-scheme]').addEventListener('change', (event) => {
+      preferences.colorScheme = event.target.value;
+      update();
+    });
+    document.querySelector('[data-demo-layout]').addEventListener('change', (event) => {
+      main.dataset.pwfLayout = event.target.value;
+    });
+    document.querySelector('[data-demo-scale]').addEventListener('input', (event) => {
+      preferences.scale = event.target.value;
+      update();
+    });
+    document.querySelector('[data-demo-contrast]').addEventListener('change', (event) => {
+      preferences.contrast = event.target.checked ? 'more' : 'auto';
+      update();
+    });
+    document.querySelector('[data-demo-motion]').addEventListener('change', (event) => {
+      preferences.motion = event.target.checked ? 'reduce' : 'auto';
+      update();
+    });
+    document.querySelector('[data-demo-toast]').addEventListener('click', () => {
+      showToast('The notification module loaded independently.');
+    });
+  </script>
+</body>
+</html>

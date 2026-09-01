@@ -1,0 +1,24 @@
+{
+  "$schema": "../schemas/license-inventory.schema.json",
+  "schemaVersion": 1,
+  "projectLicense": "MIT",
+  "components": [
+    {
+      "name": "Pangom Web Framework foundation",
+      "kind": "first-party",
+      "version": "0.1.0-alpha.1",
+      "license": "MIT",
+      "distribution": "source-and-build",
+      "notice": "LICENSE"
+    },
+    {
+      "name": "Tailwind CSS",
+      "kind": "optional-build-dependency",
+      "version": "consumer-supplied",
+      "license": "MIT",
+      "distribution": "not-vendored",
+      "homepage": "https://tailwindcss.com/",
+      "notice": "Retain the Tailwind CSS MIT notice when distributing Tailwind packages or derived bundles."
+    }
+  ]
+}

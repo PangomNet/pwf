@@ -1,0 +1,12 @@
+{
+  "$schema": "../../schemas/theme.schema.json",
+  "schemaVersion": 1,
+  "id": "quiet",
+  "name": "Quiet",
+  "description": "A restrained neutral theme for dense tools and long reading.",
+  "version": "0.1.0-alpha.1",
+  "pwfVersion": ">=0.1.0-alpha.1 <0.2.0",
+  "license": "MIT",
+  "styles": ["quiet.css"],
+  "modes": ["light", "dark"]
+}
