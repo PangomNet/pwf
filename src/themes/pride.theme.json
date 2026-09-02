@@ -1,0 +1,6 @@
+{
+  "$schema": "../../schemas/theme.schema.json", "schemaVersion": 1, "id": "pride", "name": "Pride",
+  "description": "A complete spectrum theme pack, independent from seasonal activation rules.", "category": "seasonal", "tags": ["pride", "spectrum", "seasonal"], "removable": true,
+  "provenance": "First-party implementation of the placeholder design slot found in the Monitor configuration; no Monitor assets copied.", "assets": [],
+  "version": "0.1.0-alpha.6", "pwfVersion": ">=0.1.0-alpha.6 <0.2.0", "license": "MIT", "styles": ["pride.css"], "modes": ["light", "dark"]
+}

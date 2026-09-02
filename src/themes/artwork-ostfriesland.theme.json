@@ -1,0 +1,6 @@
+{
+  "$schema": "../../schemas/theme.schema.json", "schemaVersion": 1, "id": "artwork-ostfriesland", "name": "Artwork Ostfriesland",
+  "description": "Glassy artwork surfaces prepared for application-supplied regional backgrounds.", "category": "artwork", "tags": ["artwork", "glass", "regional"], "removable": true,
+  "provenance": "Adapted from the ONA Monitor artwork token configuration; background photographs are intentionally not distributed until their licenses are inventoried.", "assets": [],
+  "version": "0.1.0-alpha.6", "pwfVersion": ">=0.1.0-alpha.6 <0.2.0", "license": "MIT", "styles": ["artwork-ostfriesland.css"], "modes": ["light", "dark"]
+}

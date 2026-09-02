@@ -29,7 +29,11 @@ site doubles as a reference implementation and a continuous integration target.
   keyboard handling for long horizontal navigation.
 - [PWF Standard design language](design-standard.md) records the exact shell
   geometry, surface hierarchy, route accents, typography boundary, and responsive behavior.
-- [Theme authoring](themes.md) explains removable token-only themes.
+- [Theme authoring](themes.md) explains removable themes and fixed/adaptive mode contracts.
+- [PanPlay theme parity](panplay-theme-parity.md) records source mappings,
+  distinctive markers, and the component-by-component visual review matrix.
+- [Add-ons and Media](addons.md) documents capability-gated removable packages
+  and the first audio/video player foundation.
 - [Versioning](versioning.md) explains independent framework, application,
   theme, extension, and schema versions.
 - [Architecture](../ARCHITECTURE.md) explains package boundaries and stable

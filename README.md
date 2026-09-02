@@ -5,7 +5,7 @@ combines framework-owned design tokens and components with an optional Tailwind
 CSS preset. Applications can use the complete download while shipping only the
 modules and themes they need.
 
-The repository is at an early foundation stage. The first slice provides:
+The repository is in active alpha development. The current slices provide:
 
 - namespaced design tokens and normal, wide, and fluid layouts;
 - light/dark/automatic color schemes, increased contrast, reduced motion, and
@@ -24,6 +24,12 @@ The repository is at an early foundation stage. The first slice provides:
   horizontal scroll rails, immediate search focus, and normal/wide/fluid views;
 - status variants, cards, native dropdowns and accordions, list groups,
   pagination, input groups, switches, and functional persistent launcher pins.
+- reusable navbars, nav variants, Heroes, stats, toolbars, avatars, media
+  objects, steps, timelines, galleries, skeletons, empty states, and side sheets;
+- nineteen independently removable theme packs—including all eleven fixed
+  designs found in the local PanPlay/oOPlay candidate—plus an on-demand manager;
+- a capability-gated add-on registry and the first separate Media Player package
+  with native audio/video fallback, timeline, queue, and optional Media Session.
 
 ## Quick start
 
@@ -38,8 +44,7 @@ Serve the repository with any static web server and open
 live components, the complete settings route, and allowlisted Markdown sources
 inside the same design. `examples/foundation/index.html` remains the deliberately
 small shell-independent integration example. Both use ordinary links and
-semantic HTML; JavaScript only enhances dialogs, tabs, preferences, rails, and
-toasts.
+semantic HTML; JavaScript only enhances explicitly initialized modules.
 
 For Tailwind projects, add `tailwind.preset.cjs` to the application's presets
 and include `src/tailwind.css` in its Tailwind input. PWF itself does not vendor
@@ -63,3 +68,5 @@ the behavioral contracts. In particular:
 - [Documentation system](docs/documentation-system.md) defines the required
   structure for future module documentation and the PWF-powered documentation
   site.
+- [Add-ons and Media](docs/addons.md) explains removable feature packages,
+  capability grants, and the first Media Player contract.

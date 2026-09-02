@@ -1,4 +1,5 @@
-import { PWF_VERSION, applyPreferences, initLaunchers, initPwf, openDialog } from '../../dist/pwf.js';
+import { PWF_VERSION, applyPreferences, createThemeManager, getThemeModeState, initLaunchers, initPwf, openDialog } from '../../dist/pwf.js';
+import { SHOWCASE_THEMES } from './themes.js';
 
 initPwf();
 
@@ -12,12 +13,17 @@ document.querySelectorAll('[data-pwf-version]').forEach((output) => {
 
 const root = document.documentElement;
 const app = document.querySelector('.pwf-app');
+const themeManager = createThemeManager({ root, document, baseUrl: import.meta.url });
+SHOWCASE_THEMES.forEach((theme) => themeManager.register(theme));
+const linkedThemeId = new URLSearchParams(window.location.search).get('theme');
+if (linkedThemeId && themeManager.get(linkedThemeId)) themeManager.apply(linkedThemeId);
 const preferences = {
   colorScheme: root.dataset.pwfColorScheme || 'auto',
   contrast: root.dataset.pwfContrast || 'auto',
   motion: root.dataset.pwfMotion || 'auto',
   scale: Number.parseFloat(getComputedStyle(root).getPropertyValue('--pwf-ui-scale')) || 1
 };
+let requestedColorScheme = preferences.colorScheme;
 
 function syncControls(selector, value, source) {
   document.querySelectorAll(selector).forEach((control) => {
@@ -26,21 +32,63 @@ function syncControls(selector, value, source) {
 }
 
 document.querySelectorAll('[data-shell-theme]').forEach((control) => {
+  const groups = new Map();
+  control.replaceChildren();
+  SHOWCASE_THEMES.forEach((theme) => {
+    if (!groups.has(theme.category)) {
+      const group = document.createElement('optgroup');
+      group.label = theme.category === 'core' ? 'PWF Core' : theme.category === 'seasonal' ? 'Saisonal' : theme.category === 'media' ? 'Media' : theme.category === 'artwork' ? 'Artwork' : theme.category === 'legacy' ? 'PanPlay Archiv' : 'Marke';
+      groups.set(theme.category, group);
+      control.append(group);
+    }
+    const option = document.createElement('option');
+    option.value = theme.id;
+    option.textContent = theme.name;
+    groups.get(theme.category).append(option);
+  });
   control.value = root.dataset.pwfTheme || 'standard';
   control.addEventListener('change', (event) => {
-    root.dataset.pwfTheme = event.target.value;
+    const theme = themeManager.apply(event.target.value);
+    applyThemeMode(theme);
     syncControls('[data-shell-theme]', event.target.value, event.target);
   });
 });
 
+function applyThemeMode(theme) {
+  const state = getThemeModeState(theme, requestedColorScheme);
+  preferences.colorScheme = state.resolved;
+  applyPreferences(preferences, root);
+  root.dataset.pwfThemeMode = state.locked ? 'fixed' : 'adaptive';
+  document.querySelectorAll('[data-shell-color-scheme]').forEach((control) => {
+    control.value = state.resolved;
+    control.disabled = state.locked;
+    control.setAttribute('aria-description', state.locked
+      ? `Dieses Theme besitzt nur die feste ${state.resolved === 'dark' ? 'dunkle' : 'helle'} Originaldarstellung.`
+      : 'Das Theme unterstützt helle, dunkle und automatische Darstellung.');
+    let hint = control.parentElement?.querySelector('[data-shell-theme-mode-status]');
+    if (!hint && control.parentElement) {
+      hint = document.createElement('small');
+      hint.className = 'pwf-hint';
+      hint.dataset.shellThemeModeStatus = '';
+      control.insertAdjacentElement('afterend', hint);
+    }
+    if (hint) hint.textContent = state.locked
+      ? `Festes ${state.resolved === 'dark' ? 'dunkles' : 'helles'} Originalschema`
+      : 'Automatik sowie Hell und Dunkel verfügbar';
+  });
+}
+
 document.querySelectorAll('[data-shell-color-scheme]').forEach((control) => {
   control.value = preferences.colorScheme;
   control.addEventListener('change', (event) => {
-    preferences.colorScheme = event.target.value;
+    requestedColorScheme = event.target.value;
+    preferences.colorScheme = getThemeModeState(themeManager.get(root.dataset.pwfTheme), requestedColorScheme).resolved;
     applyPreferences(preferences, root);
-    syncControls('[data-shell-color-scheme]', event.target.value, event.target);
+    syncControls('[data-shell-color-scheme]', preferences.colorScheme, event.target);
   });
 });
+
+applyThemeMode(themeManager.get(root.dataset.pwfTheme || 'standard'));
 
 document.querySelectorAll('[data-shell-scale]').forEach((control) => {
   control.value = String(preferences.scale);

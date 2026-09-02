@@ -5,6 +5,9 @@ export { createToastRegion, showToast } from './toast.js';
 export { initMarkdownViewers, loadMarkdownViewer, renderMarkdown } from './markdown-viewer.js';
 export { initScrollRails } from './scroll-rail.js';
 export { initLaunchers } from './launcher.js';
+export { createAddonRegistry } from './addons.js';
+export { createThemeManager, getThemeModeState } from './theme-manager.js';
+export { initDismissibles } from './dismissible.js';
 
 /** Framework version injected from package.json by the build. */
 export const PWF_VERSION = '__PWF_VERSION__';

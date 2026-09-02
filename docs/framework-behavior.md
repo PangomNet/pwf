@@ -42,13 +42,19 @@ Preferences are independent axes:
 injects a storage adapter. Consent policy therefore remains under application
 control, and the foundation never writes cookies.
 
-Automatic modes follow operating-system media queries. Explicit increased
-contrast and reduced motion take precedence over decorative theme choices.
+Automatic modes follow operating-system media queries only when the active
+theme manifest lists both `light` and `dark` in `modes`. A single-mode theme is
+a fixed composition: `getThemeModeState()` resolves every request to that one
+mode, and controls offering an unavailable mode should be disabled. This avoids
+mixing core dark tokens with historical light chrome or vice versa. Explicit
+increased contrast and reduced motion still take precedence over decorative
+theme choices.
 
 ## Themes
 
-A theme overrides tokens under one `data-pwf-theme` selector. It cannot change
-required markup, initialize behavior, or disable accessibility preferences.
+A theme overrides tokens and may add fully scoped presentation rules under one
+`data-pwf-theme` selector. It cannot change required markup, initialize
+behavior, or disable accessibility preferences.
 Deleting a theme file leaves the neutral core usable. Theme metadata follows
 `schemas/theme.schema.json`, allowing a future App Center and documentation site
 to list compatibility without executing theme code.

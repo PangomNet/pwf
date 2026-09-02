@@ -102,6 +102,75 @@
       "documentation": "docs/components/foundation.md#list-group-and-pagination"
     },
     {
+      "id": "page-patterns",
+      "status": "experimental",
+      "css": ["pwf-navbar", "pwf-nav", "pwf-hero", "pwf-stats", "pwf-stat", "pwf-toolbar"],
+      "javascript": null,
+      "semantics": "Use labelled sections for heroes and named nav landmarks containing ordinary anchors for every navigation pattern.",
+      "documentation": "docs/components/foundation.md#page-and-content-patterns"
+    },
+    {
+      "id": "content-patterns",
+      "status": "experimental",
+      "css": ["pwf-avatar", "pwf-avatar-group", "pwf-media-object", "pwf-steps", "pwf-timeline", "pwf-ratio", "pwf-figure", "pwf-gallery"],
+      "javascript": null,
+      "semantics": "Choose lists, figures, articles, time elements, and headings according to the content; presentation classes do not replace document semantics.",
+      "documentation": "docs/components/foundation.md#page-and-content-patterns"
+    },
+    {
+      "id": "loading-empty",
+      "status": "experimental",
+      "css": ["pwf-placeholder", "pwf-placeholder--text", "pwf-placeholder--media", "pwf-empty"],
+      "javascript": null,
+      "semantics": "Give busy regions a meaningful accessible name and aria-busy; empty states remain labelled sections with visible next actions.",
+      "documentation": "docs/components/foundation.md#loading-empty-state-and-side-sheet"
+    },
+    {
+      "id": "side-sheet",
+      "status": "experimental",
+      "css": ["pwf-sheet", "pwf-sheet__header", "pwf-sheet__body", "pwf-sheet__footer", "pwf-close"],
+      "javascript": "initDialogs",
+      "semantics": "Use a named native dialog and retain a complete-page route for important sheet content.",
+      "documentation": "docs/components/foundation.md#loading-empty-state-and-side-sheet",
+      "enhancement": "The normal PWF dialog data attributes open and close the side-sheet presentation."
+    },
+    {
+      "id": "dismissible",
+      "status": "experimental",
+      "css": ["pwf-close", "pwf-alert__actions"],
+      "javascript": "initDismissibles",
+      "semantics": "Use a button with an explicit accessible label; dismissal hides only the closest declared component.",
+      "documentation": "docs/components/foundation.md#status-alerts-badges-and-progress",
+      "enhancement": "data-pwf-dismiss emits pwf:dismiss and never removes server data."
+    },
+    {
+      "id": "theme-manager",
+      "status": "experimental",
+      "css": [],
+      "javascript": "createThemeManager",
+      "semantics": "Theme selection changes tokens and scoped presentation only; supported color modes are resolved without changing document meaning or application data.",
+      "documentation": "docs/themes.md#authoring-a-pwf-theme",
+      "enhancement": "Registered theme styles load on demand and remain independently removable; getThemeModeState prevents fixed historical designs from mixing color schemes."
+    },
+    {
+      "id": "addon-registry",
+      "status": "experimental",
+      "css": [],
+      "javascript": "createAddonRegistry",
+      "semantics": "Applications explicitly register packages and grant capabilities before activation.",
+      "documentation": "docs/addons.md#add-ons-and-the-first-media-package",
+      "enhancement": "Activation checks dependencies and capabilities and supports cleanup during deactivation."
+    },
+    {
+      "id": "media-player-addon",
+      "status": "experimental",
+      "css": ["pwf-player", "pwf-player__stage", "pwf-player__controls", "pwf-player__timeline", "pwf-player__queue"],
+      "javascript": "initMediaPlayers",
+      "semantics": "Keep a native audio or video element as the playback baseline and label every custom control.",
+      "documentation": "docs/addons.md#media-player-alpha-contract",
+      "enhancement": "Optional controls synchronize playback, mute, timeline, queue changes, and explicitly enabled Media Session actions."
+    },
+    {
       "id": "app-shell",
       "status": "experimental",
       "css": ["pwf-app", "pwf-app__header", "pwf-app__header-primary", "pwf-app__main", "pwf-app__stage", "pwf-app__content", "pwf-app__framework-divider", "pwf-app__footer"],

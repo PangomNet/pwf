@@ -72,3 +72,13 @@ progress {
 .pwf-select[aria-invalid="false"],
 .pwf-textarea[aria-invalid="false"] { border-color: var(--pwf-color-success); }
 .pwf-valid { color: var(--pwf-color-success); font-size: 0.875rem; }
+
+.pwf-floating { position: relative; }
+.pwf-floating > :is(.pwf-input, .pwf-select) { min-height: 3.5rem; padding-block: 1.35rem 0.35rem; }
+.pwf-floating > .pwf-label { position: absolute; inset-block-start: 0.35rem; inset-inline-start: 0.8rem; color: var(--pwf-color-text-muted); font-size: 0.72rem; pointer-events: none; }
+.pwf-file { width: 100%; border: 1px solid var(--pwf-color-border); border-radius: var(--pwf-radius-md); background: var(--pwf-color-surface-solid); color: var(--pwf-color-text-muted); }
+.pwf-file::file-selector-button { min-height: 2.75rem; margin-inline-end: 0.8rem; border: 0; border-inline-end: 1px solid var(--pwf-color-border); padding-inline: 1rem; background: var(--pwf-color-surface-muted); color: var(--pwf-color-text); font: inherit; font-weight: 750; cursor: pointer; }
+.pwf-range { width: 100%; min-height: 2rem; }
+.pwf-form-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--pwf-space-4); }
+.pwf-form-grid > * { grid-column: span var(--pwf-field-span, 12); }
+@media (max-width: 42rem) { .pwf-form-grid > * { grid-column: 1 / -1; } }

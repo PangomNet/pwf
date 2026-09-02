@@ -1,0 +1,6 @@
+{
+  "$schema": "../../schemas/theme.schema.json", "schemaVersion": 1, "id": "winter", "name": "Winter",
+  "description": "Warm red and evergreen seasonal design without forced activation.", "category": "seasonal", "tags": ["winter", "seasonal", "warm"], "removable": true,
+  "provenance": "Adapted from the disabled Christmas-special token placeholder in the Monitor configuration.", "assets": [],
+  "version": "0.1.0-alpha.6", "pwfVersion": ">=0.1.0-alpha.6 <0.2.0", "license": "MIT", "styles": ["winter.css"], "modes": ["light", "dark"]
+}

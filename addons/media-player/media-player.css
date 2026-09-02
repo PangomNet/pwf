@@ -1,0 +1,18 @@
+.pwf-player { overflow: hidden; border: 1px solid var(--pwf-color-border); border-radius: var(--pwf-radius-lg); background: #050608; color: #fff; box-shadow: var(--pwf-shadow-md); }
+.pwf-player__stage { position: relative; min-height: 16rem; display: grid; place-items: center; background: radial-gradient(circle at 70% 20%, color-mix(in srgb, var(--pwf-color-accent) 48%, transparent), transparent 34%), linear-gradient(145deg, #151824, #050608 70%); }
+.pwf-player__stage video { width: 100%; max-height: 70vh; display: block; }
+.pwf-player__poster { display: grid; justify-items: center; gap: 0.75rem; text-align: center; }
+.pwf-player__poster-mark { width: 5rem; aspect-ratio: 1; display: grid; place-items: center; border-radius: 1.5rem; background: var(--pwf-color-accent); color: var(--pwf-color-on-accent); font-size: 2rem; font-weight: 950; rotate: -4deg; }
+.pwf-player__controls { display: grid; grid-template-columns: auto auto 1fr auto; gap: 0.75rem; align-items: center; padding: 0.9rem 1rem; background: rgba(5, 6, 8, 0.96); }
+.pwf-player__button { width: 2.75rem; aspect-ratio: 1; display: grid; place-items: center; border: 1px solid rgba(255,255,255,0.18); border-radius: 50%; background: transparent; color: #fff; cursor: pointer; }
+.pwf-player__button:hover { background: rgba(255,255,255,0.1); }
+.pwf-player__timeline { width: 100%; accent-color: var(--pwf-color-accent); }
+.pwf-player__time { min-width: 6.5rem; color: rgba(255,255,255,0.72); font-variant-numeric: tabular-nums; font-size: 0.82rem; text-align: end; }
+.pwf-player__meta { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem; background: var(--pwf-color-surface-solid); color: var(--pwf-color-text); }
+.pwf-player__meta strong,
+.pwf-player__meta span { display: block; }
+.pwf-player__meta span { color: var(--pwf-color-text-muted); font-size: 0.86rem; }
+.pwf-player__queue { margin: 0; padding: 0; list-style: none; }
+.pwf-player__queue button { width: 100%; display: grid; grid-template-columns: auto 1fr auto; gap: 0.75rem; align-items: center; border: 0; border-top: 1px solid var(--pwf-color-border); padding: 0.8rem 1rem; background: var(--pwf-color-surface-solid); color: var(--pwf-color-text); text-align: start; cursor: pointer; }
+.pwf-player__queue button[aria-current="true"] { color: var(--pwf-color-accent); }
+@media (max-width: 36rem) { .pwf-player__controls { grid-template-columns: auto auto 1fr; } .pwf-player__time { grid-column: 1 / -1; text-align: start; } .pwf-player__meta { flex-direction: column; } }

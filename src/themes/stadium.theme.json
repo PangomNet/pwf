@@ -1,0 +1,6 @@
+{
+  "$schema": "../../schemas/theme.schema.json", "schemaVersion": 1, "id": "stadium", "name": "Stadium",
+  "description": "Green and gold seasonal surfaces derived from the Monitor football-special tokens.", "category": "seasonal", "tags": ["sport", "seasonal", "green"], "removable": true,
+  "provenance": "Adapted from the ONA Monitor football special token configuration without its photographs or event schedule.", "assets": [],
+  "version": "0.1.0-alpha.6", "pwfVersion": ">=0.1.0-alpha.6 <0.2.0", "license": "MIT", "styles": ["stadium.css"], "modes": ["light", "dark"]
+}

@@ -24,7 +24,7 @@ and an integration plan.
 3. **Themes** (`src/themes`) contain only token overrides and optional decorative
    rules. Every theme is a separate file, so deleting it cannot break the core.
    Metadata follows `schemas/theme.schema.json`.
-4. **Shell and feature modules** (future `packages/*`) compose core components:
+4. **Add-ons and shell feature modules** (`addons/*` and future `packages/*`) compose core components:
    launcher, settings, search, PWA, consent, feeds, viewers, media, and extension
    management. These modules communicate through documented adapters rather
    than application globals.
@@ -42,11 +42,13 @@ and an integration plan.
 - `dist/pwf.js` exports enhancement functions; importing it performs no automatic
   initialization. Applications call `initPwf()` explicitly.
 - `dist/themes/*.css` are independently loadable and removable.
+- `dist/addons/*` contains independently loadable feature packages. Add-on
+  JavaScript and CSS are never merged into the Core bundles.
 - Source modules remain unminified and independently addressable.
 - Tailwind is a build-time integration. The preset maps PWF tokens into utility
   names; the browser runtime does not require Tailwind.
-- Future feature packages must declare dependencies and capabilities in an
-  extension manifest. A full distribution may contain all packages, while an
+- Feature packages declare dependencies and capabilities through
+  `schemas/addon.schema.json`. A full distribution may contain all packages, while an
   application loads only selected entry points.
 
 ## Stable contracts

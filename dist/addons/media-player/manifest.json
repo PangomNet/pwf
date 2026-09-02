@@ -1,0 +1,17 @@
+{
+  "$schema": "../../schemas/addon.schema.json",
+  "schemaVersion": 1,
+  "id": "media-player",
+  "name": "PWF Media Player",
+  "description": "Shared audio/video presentation, queue, metadata and Media Session foundation.",
+  "version": "0.1.0-alpha.6",
+  "pwfVersion": ">=0.1.0-alpha.6 <0.2.0",
+  "license": "MIT",
+  "entry": "media-player.js",
+  "styles": ["media-player.css"],
+  "routes": [],
+  "settings": ["mediaSession"],
+  "dependencies": [],
+  "capabilities": ["media-playback"],
+  "removable": true
+}

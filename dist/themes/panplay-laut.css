@@ -1,0 +1,17 @@
+[data-pwf-theme="panplay-laut"] { color-scheme:dark; --pwf-font-sans:"Arial Narrow","Roboto Condensed","Helvetica Neue Condensed","Segoe UI",Arial,sans-serif; --pwf-color-accent:#138c74; --pwf-color-accent-hover:#19a88b; --pwf-color-on-accent:#fff; --pwf-color-canvas:#373b4b; --pwf-color-canvas-accent:rgba(45,84,84,.2); --pwf-color-surface:#373b4b; --pwf-color-surface-solid:#373b4b; --pwf-color-surface-muted:#2b2f40; --pwf-color-text:#f4f5f8; --pwf-color-text-muted:#c4c7d1; --pwf-color-border:#5a6075; --pwf-color-success:#138c74; --pwf-radius-md:.55rem; --pwf-radius-lg:.6rem; --pwf-shell-header:#373b4b; --pwf-shell-stage:#373b4b; --pwf-shell-footer:#1d2133; --pwf-shell-divider:#2b2f40; }
+[data-pwf-theme="panplay-laut"] :is(.pwf-button, .pwf-card__title, .pwf-panel__title, .pwf-navbar__brand) { letter-spacing:.025em; }
+[data-pwf-theme="panplay-laut"] .pwf-button { border-color:#138c74; background:#138c74; box-shadow:none; }
+[data-pwf-theme="panplay-laut"] :is(.pwf-card__header, .pwf-card__footer, .pwf-navbar) { background: linear-gradient(135deg, #303548, #252a3b); }
+[data-pwf-theme="panplay-laut"] .pwf-player__controls { border-top: .2rem solid #5a6075; }
+[data-pwf-theme="panplay-laut"] :is(.pwf-dropdown__menu,.pwf-accordion__item,.pwf-dialog,.pwf-overlay,.pwf-sheet) { border-color:#5a6075; background:#373b4b; color:#f4f5f8; }
+[data-pwf-theme="panplay-laut"] :is(.pwf-dropdown__menu a,.pwf-dropdown__menu button):hover,
+[data-pwf-theme="panplay-laut"] .pwf-accordion__item[open] summary { background:#2d5454; color:#fff; }
+[data-pwf-theme="panplay-laut"] :is(.pwf-input,.pwf-select,.pwf-textarea,.pwf-file) { border-color:#5a6075; background:#2b2f40; color:#f4f5f8; }
+[data-pwf-theme="panplay-laut"] :is(.pwf-table th,.pwf-card__header,.pwf-card__footer,.pwf-tabs__tab[aria-selected="true"]) { background:#2b2f40; color:#f4f5f8; }
+[data-pwf-theme="panplay-laut"] .pwf-player { background:#1d2133; }
+[data-pwf-theme="panplay-laut"] .pwf-player__controls { background:#1d2133; }
+[data-pwf-theme="panplay-laut"] .pwf-player__meta,
+[data-pwf-theme="panplay-laut"] .pwf-player__queue button { background:#2b2f40; color:#f4f5f8; }
+[data-pwf-theme="panplay-laut"] .pwf-brandmark > span:nth-child(1) { background:#2b2f40; color:#fff; }
+[data-pwf-theme="panplay-laut"] .pwf-brandmark > span:nth-child(2) { background:#5a6075; color:#fff; }
+[data-pwf-theme="panplay-laut"] .pwf-brandmark > span:nth-child(3) { background:#138c74; color:#fff; }

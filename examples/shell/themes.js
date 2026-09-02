@@ -1,0 +1,21 @@
+export const SHOWCASE_THEMES = Object.freeze([
+  { id: 'standard', name: 'PWF Standard', category: 'core', styles: ['../../dist/themes/standard.css'], modes: ['light', 'dark'], removable: true },
+  { id: 'quiet', name: 'Quiet', category: 'core', styles: ['../../dist/themes/quiet.css'], modes: ['light', 'dark'], removable: true },
+  { id: 'pangom', name: 'Pangom', category: 'brand', styles: ['../../dist/themes/pangom.css'], modes: ['light', 'dark'], removable: true },
+  { id: 'panplay-studio', name: 'PanPlay Studio', category: 'media', styles: ['../../dist/themes/panplay-studio.css'], modes: ['light', 'dark'], removable: true },
+  { id: 'panplay-default', name: 'PanPlay Default', category: 'legacy', styles: ['../../dist/themes/panplay-default.css'], modes: ['dark'], removable: true },
+  { id: 'panplay-light', name: 'PanPlay Light', category: 'legacy', styles: ['../../dist/themes/panplay-light.css'], modes: ['light'], removable: true },
+  { id: 'panplay-laut', name: 'PanPlay Laut', category: 'legacy', styles: ['../../dist/themes/panplay-laut.css'], modes: ['dark'], removable: true },
+  { id: 'panplay-hc-dark', name: 'PanPlay HC Dark', category: 'legacy', styles: ['../../dist/themes/panplay-hc-dark.css'], modes: ['dark'], removable: true },
+  { id: 'panplay-glass', name: 'PanPlay Glass', category: 'legacy', styles: ['../../dist/themes/panplay-glass.css'], modes: ['dark'], removable: true },
+  { id: 'panplay-deepin', name: 'PanPlay Deepin', category: 'legacy', styles: ['../../dist/themes/panplay-deepin.css'], modes: ['dark'], removable: true },
+  { id: 'panplay-aqua', name: 'PanPlay Aqua', category: 'legacy', styles: ['../../dist/themes/panplay-aqua.css'], modes: ['light'], removable: true },
+  { id: 'panplay-aero', name: 'PanPlay Aero', category: 'legacy', styles: ['../../dist/themes/panplay-aero.css'], modes: ['light'], removable: true },
+  { id: 'panplay-winxp', name: 'PanPlay Windows XP', category: 'legacy', styles: ['../../dist/themes/panplay-winxp.css'], modes: ['light'], removable: true },
+  { id: 'panplay-win9x', name: 'PanPlay Windows 9x', category: 'legacy', styles: ['../../dist/themes/panplay-win9x.css'], modes: ['light'], removable: true },
+  { id: 'panplay-cosmo', name: 'PanPlay BS Cosmo', category: 'legacy', styles: ['../../dist/themes/panplay-cosmo.css'], modes: ['dark'], removable: true },
+  { id: 'artwork-ostfriesland', name: 'Artwork Ostfriesland', category: 'artwork', styles: ['../../dist/themes/artwork-ostfriesland.css'], modes: ['light', 'dark'], removable: true },
+  { id: 'stadium', name: 'Stadium', category: 'seasonal', styles: ['../../dist/themes/stadium.css'], modes: ['light', 'dark'], removable: true },
+  { id: 'pride', name: 'Pride', category: 'seasonal', styles: ['../../dist/themes/pride.css'], modes: ['light', 'dark'], removable: true },
+  { id: 'winter', name: 'Winter', category: 'seasonal', styles: ['../../dist/themes/winter.css'], modes: ['light', 'dark'], removable: true }
+]);

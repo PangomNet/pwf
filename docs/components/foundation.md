@@ -195,3 +195,35 @@ showToast('Connection failed.', { tone: 'danger', duration: 0 });
 
 Toasts should not contain essential instructions or replace inline form errors,
 because transient content can be missed.
+# Page and content patterns
+
+PWF ships reusable page compositions without assigning application meaning.
+`pwf-navbar`, `pwf-nav`, `pwf-hero`, `pwf-stats`, `pwf-toolbar`, avatars, media
+objects, steps, timelines, ratios, figures, and `pwf-gallery` all work without
+JavaScript. A Hero remains a labelled `section`; every navigation destination
+remains an anchor; a gallery remains an ordinary horizontally scrollable list.
+
+```html
+<section class="pwf-hero pwf-hero--split" aria-labelledby="welcome-title">
+  <div class="pwf-hero__content">
+    <h1 class="pwf-hero__title" id="welcome-title">Build an application</h1>
+    <div class="pwf-hero__actions"><a class="pwf-button" href="/start">Start</a></div>
+  </div>
+  <div class="pwf-hero__visual" aria-hidden="true">…</div>
+</section>
+```
+
+## Loading, empty state, and Side Sheet
+
+Skeletons supplement a labelled region with `aria-busy="true"`; they never
+replace its accessible name. Animation stops under reduced motion. Empty states
+use a labelled section with an actionable next step. `pwf-sheet` is a native
+dialog presentation, activated by the same `data-pwf-dialog-open` contract as a
+modal. Important sheet content must also have a complete-page route.
+
+## Extended form recipes
+
+`pwf-floating`, `pwf-file`, `pwf-range`, datalists, and the twelve-column
+`pwf-form-grid` extend the same native controls. Visible labels remain present;
+file restrictions and server errors must be written as text rather than encoded
+only in accept patterns or color.

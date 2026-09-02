@@ -16,6 +16,7 @@
 @import "./components/card.css";
 @import "./components/disclosure.css";
 @import "./components/navigation.css";
+@import "./components/patterns.css";
 @import "./shell/app-shell.css";
 @import "./shell/content.css";
 @import "./shell/overlays.css";

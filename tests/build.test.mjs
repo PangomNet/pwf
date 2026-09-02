@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { access, readFile } from 'node:fs/promises';
+import { access, readFile, readdir } from 'node:fs/promises';
 
 const read = (path) => readFile(new URL(path, import.meta.url), 'utf8');
 
@@ -22,6 +22,11 @@ test('foundation build is complete and application-neutral', async () => {
   assert.match(css, /\.pwf-list-group__item/);
   assert.match(css, /\.pwf-pagination/);
   assert.match(css, /\.pwf-switch/);
+  assert.match(css, /\.pwf-hero--split/);
+  assert.match(css, /\.pwf-navbar/);
+  assert.match(css, /\.pwf-empty/);
+  assert.match(css, /\.pwf-sheet/);
+  assert.match(css, /\.pwf-placeholder/);
   assert.match(javascript, /export function initPwf/);
   assert.match(javascript, /export \{ initScrollRails \}/);
   assert.match(javascript, /export \{ initLaunchers \}/);
@@ -57,6 +62,9 @@ test('shell reference keeps navigation usable as complete page links', async () 
   assert.match(components, /id="cards"/);
   assert.match(components, /id="disclosure"/);
   assert.match(components, /id="navigation"/);
+  assert.match(components, /id="heroes"/);
+  assert.match(components, /id="content-patterns"/);
+  assert.match(components, /id="media-addon"/);
   assert.match(components, /data-shell-layout/);
   assert.match(components, /data-pwf-scroll-rail/);
   assert.match(documentPage, /data-pwf-dialog-select/);
@@ -116,6 +124,83 @@ test('themes remain outside the core bundle', async () => {
   assert.match(quiet, /data-pwf-theme="quiet"/);
   assert.match(standard, /data-pwf-theme="standard"/);
   assert.match(standard, /--pwf-layout-wide: 1600px/);
+  const files = await readdir(new URL('../src/themes/', import.meta.url));
+  const manifests = files.filter((file) => file.endsWith('.theme.json'));
+  assert.equal(manifests.length, 19);
+  for (const file of manifests) {
+    const manifest = JSON.parse(await read(`../src/themes/${file}`));
+    assert.equal(manifest.removable, true);
+    assert.ok(manifest.category && manifest.provenance && Array.isArray(manifest.assets));
+    assert.ok(Array.isArray(manifest.modes) && manifest.modes.length >= 1 && manifest.modes.length <= 2);
+    await access(new URL(`../src/themes/${manifest.styles[0]}`, import.meta.url));
+  }
+  const historical = await Promise.all(manifests.filter((file) => file.startsWith('panplay-') && file !== 'panplay-studio.theme.json').map(async (file) => JSON.parse(await read(`../src/themes/${file}`))));
+  assert.equal(historical.length, 11);
+  assert.ok(historical.every((manifest) => manifest.modes.length === 1));
+  assert.deepEqual(historical.find((manifest) => manifest.id === 'panplay-cosmo').modes, ['dark']);
+});
+
+test('theme manager keeps optional designs removable and storage-free', async () => {
+  const manager = await read('../src/js/theme-manager.js');
+  const catalog = await read('../examples/shell/themes.js');
+  const showcase = await read('../examples/shell/components.html');
+  const aero = await read('../src/themes/panplay-aero.css');
+  const win9x = await read('../src/themes/panplay-win9x.css');
+  assert.match(manager, /export function createThemeManager/);
+  assert.match(manager, /export function getThemeModeState/);
+  assert.match(manager, /data-pwf-theme-style/);
+  assert.match(manager, /pwf:theme-change/);
+  assert.match(showcase, /data-showcase-theme="panplay-aero"/);
+  assert.match(showcase, /data-showcase-theme="panplay-win9x"/);
+  assert.match(aero, /\[data-pwf-theme="panplay-aero"\] \.pwf-button/);
+  assert.match(win9x, /border: 2px outset/);
+  assert.doesNotMatch(manager, /localStorage|sessionStorage|document\.cookie/);
+  assert.match(catalog, /panplay-studio/);
+  assert.match(catalog, /artwork-ostfriesland/);
+  assert.match(catalog, /stadium/);
+  assert.match(catalog, /panplay-win9x/);
+  assert.match(catalog, /panplay-winxp/);
+  assert.match(catalog, /panplay-cosmo/);
+  assert.match(catalog, /modes: \['dark'\]/);
+
+  const { getThemeModeState } = await import(new URL(`../dist/pwf.js?theme=${Date.now()}`, import.meta.url));
+  assert.deepEqual({ ...getThemeModeState({ modes: ['dark'] }, 'auto'), supported: [...getThemeModeState({ modes: ['dark'] }, 'auto').supported] }, { requested: 'auto', resolved: 'dark', locked: true, supported: ['dark'] });
+  assert.equal(getThemeModeState({ modes: ['light', 'dark'] }, 'auto').resolved, 'auto');
+  assert.equal(getThemeModeState({ modes: ['light', 'dark'] }, 'dark').locked, false);
+
+  for (const id of ['default', 'light', 'laut', 'hc-dark', 'glass', 'deepin', 'aqua', 'aero', 'winxp', 'win9x', 'cosmo']) {
+    const themeCss = await read(`../src/themes/panplay-${id}.css`);
+    assert.match(themeCss, /\.pwf-dropdown/);
+    assert.match(themeCss, /\.pwf-player/);
+    assert.match(themeCss, /color-scheme:/);
+  }
+});
+
+test('add-ons are separate, capability-gated packages', async () => {
+  const manifest = JSON.parse(await read('../addons/media-player/manifest.json'));
+  const media = await read('../addons/media-player/media-player.js');
+  const core = await read('../dist/pwf.js');
+  assert.equal(manifest.removable, true);
+  assert.deepEqual(manifest.capabilities, ['media-playback']);
+  assert.match(core, /export \{ createAddonRegistry \}/);
+  assert.doesNotMatch(core, /initMediaPlayers/);
+  assert.match(media, /export function initMediaPlayers/);
+  assert.match(media, /pwf:media-source-change/);
+  assert.doesNotMatch(media, /localStorage|sessionStorage|document\.cookie/);
+  await access(new URL('../dist/addons/media-player/media-player.js', import.meta.url));
+  await access(new URL('../dist/addons/media-player/media-player.css', import.meta.url));
+
+  const { createAddonRegistry } = await import(new URL(`../dist/pwf.js?test=${Date.now()}`, import.meta.url));
+  let activated = false;
+  const registry = createAddonRegistry({ capabilities: ['media-playback'] });
+  registry.register({ id: 'test-addon', version: '1.0.0', license: 'MIT', capabilities: ['media-playback'] }, {
+    activate() { activated = true; return () => { activated = false; }; }
+  });
+  await registry.activate('test-addon');
+  assert.equal(activated, true);
+  assert.equal(registry.isActive('test-addon'), true);
+  await registry.deactivate('test-addon');
+  assert.equal(activated, false);
 });
 
 test('standard shell reference preserves Monitor-derived geometry', async () => {

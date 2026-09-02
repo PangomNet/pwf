@@ -52,6 +52,7 @@ await writeFile(
 );
 await copyJavaScript();
 await cp(join(sourceRoot, 'themes'), join(distRoot, 'themes'), { recursive: true });
+await cp(join(projectRoot, 'addons'), join(distRoot, 'addons'), { recursive: true });
 await cp(join(projectRoot, 'schemas'), join(distRoot, 'schemas'), { recursive: true });
 await cp(join(projectRoot, 'catalog'), join(distRoot, 'catalog'), { recursive: true });
 await cp(join(projectRoot, 'docs'), join(distRoot, 'docs'), { recursive: true });

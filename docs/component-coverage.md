@@ -21,19 +21,25 @@ dependency boundaries, and progressive-enhancement rules.
 | Navigation | tabs, list groups, pagination, breadcrumbs, shell tabs |
 | Data | responsive semantic tables |
 | Shell | search, launcher, pins, quick settings, three content widths |
+| Page patterns | navbar, nav pills/underline, split/center heroes, stats, toolbars |
+| Content patterns | avatars, media objects, steps, timeline, ratio/figure, scroll-snap gallery |
+| Loading and empty | skeleton placeholders, empty state, loader, progress |
+| Overlays | modal dialog, search/launcher overlays, right side-sheet |
+| Add-ons | capability registry, removable Media Player package and queue foundation |
+| Themes | nineteen independently removable packs, including eleven historical PanPlay surface reconstructions, with an on-demand theme manager |
 
 ## Next coverage groups
 
 These remain separate modules rather than being simulated by the showcase:
 
-- dismissible alerts and application-controlled undo;
-- off-canvas navigation and side sheets;
 - tooltips and popovers with robust focus and touch behavior;
-- carousel/media galleries that obey reduced motion;
 - scrollspy and generated section indexes;
-- skeleton/placeholders with meaningful loading status;
-- file inputs, datalists, floating labels, and richer server-validation recipes;
+- application-controlled undo after dismissal;
+- automatic carousel controls (the native scroll-snap gallery is available);
+- richer date/color/search input recipes and multi-step server validation;
 - navigation history, drag-and-drop launcher ordering, and route-catalog output.
+- complete chapters, subtitles, streaming errors, Media Session actions, and
+  the PanPlay provider adapter for the Media Player add-on.
 
 Each addition must keep the ordinary-page and no-JavaScript baseline usable.
 

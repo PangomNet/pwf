@@ -10,6 +10,8 @@ const documents = {
   behavior: { title: 'Framework-Verhalten', section: 'Handbuch', source: '../../docs/framework-behavior.md' },
   standard: { title: 'PWF Standard', section: 'Design', source: '../../docs/design-standard.md' },
   themes: { title: 'Themes erstellen', section: 'Design', source: '../../docs/themes.md' },
+  'theme-parity': { title: 'PanPlay Theme-Parität', section: 'Design', source: '../../docs/panplay-theme-parity.md' },
+  addons: { title: 'Add-ons und Media', section: 'Entwicklung', source: '../../docs/addons.md' },
   shell: { title: 'Application Shell', section: 'Komponenten', source: '../../docs/components/shell.md' },
   foundation: { title: 'Foundation-Komponenten', section: 'Komponenten', source: '../../docs/components/foundation.md' },
   coverage: { title: 'Komponentenabdeckung', section: 'Komponenten', source: '../../docs/component-coverage.md' },

@@ -31,6 +31,12 @@ and build/test output is reproducible.
 - Expanded component families for status, cards, disclosure, navigation, input
   groups, switches, validation, and a side-by-side theme gallery.
 - Functional launcher pin/unpin controls with opt-in storage injection.
+- Broad page-pattern library: navbars, Heroes, stats, toolbars, avatars, steps,
+  timelines, galleries, loading/empty states, and side sheets.
+- Nineteen removable theme packs and an on-demand theme manager, including
+  Monitor-derived Artwork/Stadium tokens, PanPlay Studio, and detailed PWF
+  reconstructions of all eleven fixed themes found in the local PanPlay/oOPlay
+  candidate.
 - App launcher history and accessible drag-and-drop ordering (pin persistence is available).
 - Local profile/nickname adapter and reserved multi-user slots.
 - Navigation adapter with complete page loads as baseline and optional dynamic
@@ -49,7 +55,7 @@ its current implementation.
 - Manifest, service worker, offline page, update prompt, and cache-version API.
 - Local search index with provider adapters.
 - Extension manifest schema covering versions, routes, settings, dependencies,
-  capabilities, and licenses.
+  capabilities, licenses, activation, and cleanup (initial contract complete).
 - App Center UI and capability review.
 
 ## Phase 3 — Content and media
@@ -57,8 +63,9 @@ its current implementation.
 - RSS, Atom, and JSON Feed normalization.
 - Status monitor add-on extracted from application-specific presentation.
 - Sandboxed PDF viewer and bounded ZIP/file viewer.
-- Shared media API with audio/video controls, metadata, queue, chapters,
-  subtitles, Media Session integration, and PanPlay adapter.
+- Shared media API: separate player add-on, native fallback, controls, queue and
+  initial Media Session activation are available; typed metadata, chapters,
+  subtitles, streaming errors, and the PanPlay provider adapter remain.
 
 ## Phase 4 — WordPress distribution
 
