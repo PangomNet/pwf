@@ -46,6 +46,8 @@ test('shell reference keeps navigation usable as complete page links', async () 
   assert.match(settings, /id="privacy"/);
   assert.match(settings, /data-shell-color-scheme/);
   const documentPage = await read('../examples/shell/document.html');
+  const documentRuntime = await read('../examples/shell/document.js');
+  const onaRelationship = await read('../docs/ona-monitor-relationship.md');
   const components = await read('../examples/shell/components.html');
   assert.match(documentPage, /data-pwf-markdown-viewer/);
   assert.match(documentPage, /data-pwf-overlay-placement="search"/);
@@ -69,6 +71,10 @@ test('shell reference keeps navigation usable as complete page links', async () 
   assert.match(components, /data-pwf-scroll-rail/);
   assert.match(documentPage, /data-pwf-dialog-select/);
   assert.match(documentPage, /doc=scroll-rail/);
+  assert.match(documentPage, /doc=ona/);
+  assert.match(documentRuntime, /ona-monitor-relationship\.md/);
+  assert.match(onaRelationship, /Embedded PWF baseline/);
+  assert.match(onaRelationship, /bidirectional/);
   assert.doesNotMatch(home + settings + documentPage + components, /pwf-app__mobile-chevron|>⌄</);
   assert.match(home + settings + documentPage + components, /pwf-app__mobile-disclosure/);
   assert.doesNotMatch(home, /href="\.\.\/\.\.\/docs\/.+\.md"/);

@@ -54,6 +54,16 @@ See [ARCHITECTURE.md](ARCHITECTURE.md), [ROADMAP.md](ROADMAP.md), and
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for project boundaries and
 licensing.
 
+## Relationship to ONA Monitor
+
+PWF originated as ONA Monitor's interface and framework layer. The standalone
+framework and ONA's embedded PWF integration now evolve independently and may
+temporarily contain different features. Changes can move in either direction,
+but reusable behavior belongs in PWF while ONA routes, data, branding, and
+application policy stay behind a named adapter. The complete provenance,
+versioning, synchronization, and ownership model is documented in
+[PWF and ONA Monitor](docs/ona-monitor-relationship.md).
+
 ## Documentation
 
 The [documentation index](docs/README.md) provides separate paths for people
@@ -70,3 +80,5 @@ the behavioral contracts. In particular:
   site.
 - [Add-ons and Media](docs/addons.md) explains removable feature packages,
   capability grants, and the first Media Player contract.
+- [PWF and ONA Monitor](docs/ona-monitor-relationship.md) explains their shared
+  history, independent versions, and bidirectional feature exchange.

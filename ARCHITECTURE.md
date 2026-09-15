@@ -11,7 +11,10 @@ remain outside the framework.
 The ONA Monitor is a migration source and later an integration consumer. Nothing
 in PWF may depend on `MONITOR_*` globals, ONA cookies, ONA routes, or an ONA URL
 layout. Migration into ONA happens only after equivalent PWF behavior has tests
-and an integration plan.
+and an integration plan. ONA's embedded PWF integration and standalone PWF may
+temporarily contain different features; their exact baseline and Monitor-only
+revision are recorded explicitly. The complete two-way synchronization model is
+documented in `docs/ona-monitor-relationship.md`.
 
 ## Layers
 

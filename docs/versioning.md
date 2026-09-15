@@ -38,6 +38,13 @@ or commit hash. Updating PWF does not automatically require changing the
 application's major or minor version; the application version changes according
 to its user-visible release policy.
 
+ONA additionally records the exact embedded PWF baseline and may increment an
+`ona.N` integration revision for Monitor-only framework changes made after that
+baseline. This makes temporary differences explicit without publishing those
+changes as if they were already part of standalone PWF. See
+[PWF and ONA Monitor](ona-monitor-relationship.md) for the bidirectional
+synchronization and ownership model.
+
 ## Themes and extensions
 
 Every independently removable theme or extension has its own Semantic Version.

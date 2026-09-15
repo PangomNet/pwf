@@ -8,6 +8,7 @@ const documents = {
   license: { title: 'MIT-Lizenz', section: 'Projekt', source: '../../LICENSE' },
   docs: { title: 'Dokumentation', section: 'Handbuch', source: '../../docs/README.md' },
   behavior: { title: 'Framework-Verhalten', section: 'Handbuch', source: '../../docs/framework-behavior.md' },
+  ona: { title: 'PWF und ONA Monitor', section: 'Projekt', source: '../../docs/ona-monitor-relationship.md' },
   standard: { title: 'PWF Standard', section: 'Design', source: '../../docs/design-standard.md' },
   themes: { title: 'Themes erstellen', section: 'Design', source: '../../docs/themes.md' },
   'theme-parity': { title: 'PanPlay Theme-Parität', section: 'Design', source: '../../docs/panplay-theme-parity.md' },

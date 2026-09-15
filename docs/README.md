@@ -14,6 +14,9 @@ site doubles as a reference implementation and a continuous integration target.
   live previews, code recipes, layouts, search, and links to the handbook.
 - The [foundation example](../examples/foundation/index.html) remains the small
   shell-independent integration example.
+- [PWF and ONA Monitor](ona-monitor-relationship.md) explains the framework's
+  origin, the independently evolving embedded integration, and how changes move
+  safely in either direction.
 
 ## Build
 
